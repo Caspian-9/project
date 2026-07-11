@@ -138,9 +138,19 @@ class QuantHarness:
             # 进入 LLM 推理
             self._process_input(user_input)
 
-    def _process_input(self, user_input: str) -> None:
-        """处理用户输入 —— LLM 推理 + 工具调用。"""
-        self.messages.append({"role": "user", "content": user_input})
+    def _process_input(self, user_input: str, max_tool_rounds: int = 5) -> None:
+        """处理用户输入 —— LLM 推理 + 多轮工具调用。
+
+        Anthropic tool-use 循环模式:
+          1. 用户输入 → LLM
+          2. LLM 返回 tool_use → Harness 执行工具 → 结果注入为 tool_result
+          3. LLM 看到 tool_result → 可能再次 tool_use 或给出最终回答
+          4. 重复直到 LLM 不再请求工具或达到最大轮次
+
+        Args:
+            user_input: 用户输入文本。
+            max_tool_rounds: 最大工具调用轮次（防止死循环）。
+        """
 
         # 组装上下文
         context = self.context_manager.assemble(
@@ -163,30 +173,88 @@ class QuantHarness:
             TOOL_SCHEMAS[t] for t in available_tools if t in TOOL_SCHEMAS
         ]
 
-        # 调用 LLM
-        response = self.llm.chat(
-            system=system,
-            messages=self.messages,
-            tools=tool_schemas if tool_schemas else None,
-        )
+        # 构建 Anthropic 格式的消息列表
+        api_messages: list[dict[str, Any]] = list(self.messages)
+        api_messages.append({"role": "user", "content": user_input})
 
-        # 处理工具调用
-        if response.tool_calls:
-            feedback = self._handle_tool_calls(response.tool_calls)
-            self.messages.append({
-                "role": "assistant",
-                "content": f"[工具调用]\n{feedback}",
-            })
+        # 多轮工具调用循环
+        for _round in range(max_tool_rounds):
+            response = self.llm.chat(
+                system=system,
+                messages=api_messages,
+                tools=tool_schemas if tool_schemas else None,
+            )
+
+            if response.tool_calls:
+                # LLM 请求调用工具 → 执行并注入结果
+                tool_results_content: list[dict[str, Any]] = []
+                for tc in response.tool_calls:
+                    result = self._execute_single_tool(tc)
+                    tool_results_content.append({
+                        "type": "tool_result",
+                        "tool_use_id": getattr(tc, "id", tc.name),
+                        "content": result,
+                    })
+
+                # 将 assistant tool_use + user tool_result 追加到消息
+                api_messages.append({
+                    "role": "assistant",
+                    "content": [
+                        {"type": "tool_use", "name": tc.name, "input": tc.arguments}
+                        for tc in response.tool_calls
+                    ],
+                })
+                api_messages.append({
+                    "role": "user",
+                    "content": tool_results_content,
+                })
+
+                # 同时更新可读的对话历史
+                feedback = "\n".join(
+                    self._execute_single_tool(tc) for tc in response.tool_calls
+                )
+                self.messages.append({"role": "user", "content": user_input})
+                self.messages.append({
+                    "role": "assistant",
+                    "content": f"[工具调用]\n{feedback}",
+                })
+            else:
+                # LLM 给出最终回答 → 结束循环
+                self.messages.append({"role": "user", "content": user_input})
+                self.messages.append({
+                    "role": "assistant",
+                    "content": response.text,
+                })
+                print(f"\n{response.text[:2000]}")
+                break
         else:
-            self.messages.append({
-                "role": "assistant",
-                "content": response.text,
-            })
-
-        print(f"\n{response.text[:1000]}")
+            # 达到最大轮次仍未结束
+            print(f"\n[Harness] 达到最大工具调用轮次 ({max_tool_rounds})，强制结束。")
 
         # 检查阶段推进
         self._check_phase_transition()
+
+    def _execute_single_tool(self, tool_call: Any) -> str:
+        """执行单个工具调用并返回反馈文本。
+
+        Args:
+            tool_call: ToolCall dataclass 或兼容对象。
+
+        Returns:
+            工具执行结果的格式化文本。
+        """
+        name = tool_call.name if hasattr(tool_call, "name") else tool_call.get("name", "")
+        args = (
+            tool_call.arguments
+            if hasattr(tool_call, "arguments")
+            else tool_call.get("arguments", {})
+        )
+
+        if name not in self._get_available_tools():
+            return f"[拒绝] 工具 '{name}' 在当前阶段不可用"
+
+        result = self.tool_executor.execute(name, args)
+        return result.to_llm_feedback()
 
     def _handle_tool_calls(self, tool_calls: list[Any]) -> str:
         """处理 LLM 的工具调用请求。

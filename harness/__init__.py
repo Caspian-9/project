@@ -34,6 +34,7 @@ from harness.analysis_engine import FactorAnalysis, analyze_factor, compare_anal
 from harness.context import ContextBudget, ContextManager
 from harness.factor_engine import VariantGenerator, generate_variant_ideas
 from harness.llm_provider import (
+    AnthropicProvider,
     LLMProvider,
     LLMResponse,
     MockLLMProvider,
@@ -78,6 +79,7 @@ __all__ = [
     "ContextBudget",
     "ContextManager",
     # LLM
+    "AnthropicProvider",
     "LLMProvider",
     "LLMResponse",
     "MockLLMProvider",
