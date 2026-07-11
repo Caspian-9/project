@@ -1,0 +1,14 @@
+# 报告文档
+*.pdf
+*.csv
+*.caj
+*.doc
+*.docx
+
+# macOS
+__MACOSX/
+.DS_Store
+._*
+
+# Harness 运行时
+harness_workspace/
