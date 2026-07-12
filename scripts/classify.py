@@ -1,14 +1,13 @@
 """自动分类脚本：将 raw/ 下的研究报告按文件名规则归类到对应子目录。
 
 用法:
-    python llm_wiki/scripts/classify.py          # 扫描并分类
-    python llm_wiki/scripts/classify.py --dry-run # 仅预览，不实际移动
+    python scripts/classify.py          # 扫描并分类
+    python scripts/classify.py --dry-run # 仅预览，不实际移动
 """
 
 from __future__ import annotations
 
 import os
-import re
 import shutil
 import sys
 from pathlib import Path
@@ -116,7 +115,7 @@ def scan_files(raw_dir: Path) -> list[Path]:
     """递归扫描 raw/ 下的所有实际文件。
 
     Args:
-        raw_dir: llm_wiki/raw/ 的绝对路径。
+        raw_dir: raw/articles/ 的绝对路径。
 
     Returns:
         文件 Path 列表（排除目录和 .gitkeep）。
@@ -139,7 +138,7 @@ def run_classify(raw_dir: Path, dry_run: bool = False) -> tuple[int, int]:
     """执行分类。
 
     Args:
-        raw_dir: llm_wiki/raw/ 的绝对路径。
+        raw_dir: raw/articles/ 的绝对路径。
         dry_run: True 时仅打印不移动。
 
     Returns:
@@ -188,7 +187,7 @@ def cleanup_empty_dirs(raw_dir: Path) -> int:
     """清理 raw/ 下的空目录。
 
     Args:
-        raw_dir: llm_wiki/raw/ 的绝对路径。
+        raw_dir: raw/articles/ 的绝对路径。
 
     Returns:
         删除的空目录数。
@@ -210,8 +209,7 @@ def main() -> None:
     dry_run = "--dry-run" in sys.argv
 
     script_dir = Path(os.path.dirname(os.path.abspath(__file__)))
-    wiki_dir = script_dir.parent
-    raw_dir = wiki_dir / "raw"
+    raw_dir = script_dir.parent / "raw" / "articles"
 
     if not raw_dir.exists():
         print(f"错误: raw/ 目录不存在: {raw_dir}")
@@ -223,13 +221,13 @@ def main() -> None:
     classified, unmatched = run_classify(raw_dir, dry_run=dry_run)
 
     if not dry_run:
-        print(f"\n=== 清理空目录 ===")
+        print("\n=== 清理空目录 ===")
         removed = cleanup_empty_dirs(raw_dir)
-        print(f"\n=== 完成 ===")
+        print("\n=== 完成 ===")
         print(f"  已分类: {classified}")
         print(f"  未匹配: {unmatched}")
         print(f"  清理空目录: {removed}")
-        print(f"\n下一步: python llm_wiki/scripts/build_index.py")
+        print("\n下一步: python scripts/build_index.py")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,8 @@
-"""因子研究工作流状态机 — 驱动三阶段因子研究流程。
+"""因子研究工作流状态机 — 驱动四阶段因子研究流程。
 
 Phase SELECT: 用户选定报告 + 因子 → agent 深读论文，提取原始因子定义
 Phase GENERATE_BACKTEST: 生成因子变体 → 批量回测 → 汇总结果
+Phase ROBUSTNESS: 稳健性验证（分段测试/分池验证/参数稳定性）→ 决策
 Phase ANALYZE: 深度分析 → 投资逻辑 → 改进方向 → 生成报告
 """
 
@@ -13,10 +14,11 @@ from typing import Any, Optional
 
 
 class FactorResearchPhase(Enum):
-    """因子研究三阶段。"""
+    """因子研究四阶段。"""
 
     SELECT = "select"  # 选定报告和因子，深读提取定义
     GENERATE_BACKTEST = "generate_backtest"  # 生成变体 + 批量回测
+    ROBUSTNESS = "robustness"  # 稳健性验证 + 毕业/淘汰决策
     ANALYZE = "analyze"  # 深度分析 + 生成报告
 
 
@@ -53,6 +55,11 @@ class FactorResearchWorkflow:
     # Phase GENERATE_BACKTEST 产出
     variants: list[FactorVariant] = field(default_factory=list)
     backtest_results: dict[str, Any] = field(default_factory=dict)  # factor_name → metrics
+
+    # Phase ROBUSTNESS 产出
+    robustness_passed: bool = False  # 是否通过稳健性验证
+    robustness_detail: dict[str, Any] = field(default_factory=dict)  # 分段/分池/参数稳定性
+    graduation_decision: str = ""  # graduate | needs_work | discard
 
     # Phase ANALYZE 产出
     analysis_report: str = ""  # Markdown 格式的完整分析报告
@@ -151,6 +158,45 @@ PHASE_PROMPTS: dict[FactorResearchPhase, str] = {
     "best_variant": "表现最好的因子名称",
     "all_results_summary": "所有变体的回测汇总",
     "parameter_sensitivity": "参数稳定性评估"
+}}
+""",
+
+    FactorResearchPhase.ROBUSTNESS: """
+你是一个量化因子研究员。基于回测结果，你需要对最佳因子进行稳健性验证。
+
+## 最佳因子回测结果
+{best_backtest_summary}
+
+## 变体排名
+{variants_ranking}
+
+## 你的任务
+
+1. **分段测试**: 将回测区间分为前半段和后半段，分别计算 IC_IR
+   - 两段 IC_IR 方向一致且绝对值 > 0.2 → 通过
+   - 某段 IC_IR 符号反转 → 因子可能过拟合
+
+2. **参数稳定性**: 检查参数扫描结果中 IC_IR 随参数变化的曲线
+   - 高原型（IC_IR 在参数区间内稳定）→ 因子稳健
+   - 尖峰型（IC_IR 仅在某个参数值最高，偏离后快速下降）→ 过拟合嫌疑
+
+3. **稳健性决策矩阵**:
+
+   | 条件 | 决策 |
+   |------|------|
+   | 分段均通过 + 参数高原型 + |IC_IR| > 0.5 | **graduate** — 因子可毕业 |
+   | 分段均通过 + 参数高原型 + |IC_IR| > 0.2 | **needs_work** — 加入行业中性化后重试 |
+   | 分段不通过 或 参数尖峰型 | **needs_work** — 减少参数、简化因子结构 |
+   | |IC_IR| < 0.15 或 分段 IC 符号反转 | **discard** — 因子无稳健预测能力 |
+
+输出 JSON:
+{{
+    "first_half_ic_ir": 0.0,
+    "second_half_ic_ir": 0.0,
+    "split_test_passed": true,
+    "parameter_stability": "plateau|peak",
+    "decision": "graduate|needs_work|discard",
+    "reasoning": "决策理由"
 }}
 """,
 

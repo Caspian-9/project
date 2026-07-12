@@ -178,7 +178,7 @@ TOOL_SCHEMAS: dict[str, dict[str, Any]] = {
     },
     "search_wiki": {
         "name": "search_wiki",
-        "description": "在 llm_wiki 知识库中搜索相关研究报告、因子或策略。",
+        "description": "在 wiki 知识库中搜索相关研究报告、因子或策略。",
         "parameters": {
             "type": "object",
             "properties": {
@@ -219,7 +219,7 @@ class ToolExecutor:
         Args:
             data: 市场数据（全局共享）。
             engine: 回测引擎（可复用）。
-            wiki_index: llm_wiki 的 index.json 内容。
+            wiki_index: wiki/index.json 内容。
         """
         self.data = data
         self.engine = engine or FactorBacktestEngine()
@@ -553,7 +553,7 @@ class ToolExecutor:
         )
 
     def _search_wiki(self, params: dict[str, Any]) -> ToolResult:
-        """搜索 llm_wiki 知识库。"""
+        """搜索 wiki 知识库。"""
         keyword = params.get("keyword", "")
         category = params.get("category")
 
@@ -561,7 +561,7 @@ class ToolExecutor:
             return ToolResult(
                 status="partial",
                 summary="Wiki 索引未加载",
-                suggestion="请确保 llm_wiki/index.json 存在且可读",
+                suggestion="请确保 wiki/index.json 存在且可读",
             )
 
         reports = self.wiki_index["reports"]
@@ -603,11 +603,11 @@ class ToolExecutor:
 # ======================== 辅助函数 ========================
 
 
-def load_wiki_index(wiki_dir: str = "llm_wiki") -> dict[str, Any]:
+def load_wiki_index(wiki_dir: str = "wiki") -> dict[str, Any]:
     """加载 llm_wiki 索引。
 
     Args:
-        wiki_dir: llm_wiki 目录路径。
+        wiki_dir: wiki 目录路径。
 
     Returns:
         索引 dict 或空 dict。

@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 def main() -> None:
-    wiki_dir = Path(__file__).parent.parent / "wiki"
+    wiki_dir = Path(__file__).parent.parent / "wiki" / "wiki"
     idx_path = Path(__file__).parent.parent / "index.json"
 
     with open(idx_path, encoding="utf-8") as f:

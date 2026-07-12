@@ -3,8 +3,8 @@
 从 raw/ 目录扫描研究报告文件，生成/更新 index.json。
 
 用法:
-    python llm_wiki/scripts/build_index.py          # 扫描 raw/ 并生成索引
-    python llm_wiki/scripts/build_index.py --check  # 检查哪些报告文件缺失
+    python scripts/build_index.py          # 扫描 raw/ 并生成索引
+    python scripts/build_index.py --check  # 检查哪些报告文件缺失
 """
 
 from __future__ import annotations
@@ -944,7 +944,7 @@ def _scan_actual_files(raw_dir: Path) -> dict[str, list[Path]]:
     """扫描 raw/ 下各分类目录的实际文件。
 
     Args:
-        raw_dir: llm_wiki/raw/ 的绝对路径。
+        raw_dir: raw/articles/ 的绝对路径。
 
     Returns:
         {category_dir_name: [file_path, ...]} 的映射。
@@ -1013,7 +1013,7 @@ def _match_file(
     Args:
         report: KNOWN_REPORTS 中的一条记录。
         catalog: _scan_actual_files 返回的文件目录。
-        raw_dir: llm_wiki/raw/ 的绝对路径。
+        raw_dir: raw/articles/ 的绝对路径。
 
     Returns:
         匹配到的文件 Path，未匹配返回 None。
@@ -1068,7 +1068,7 @@ def build_index(raw_dir: Path) -> dict[str, Any]:
     """扫描 raw/ 目录，用模糊匹配生成索引。
 
     Args:
-        raw_dir: llm_wiki/raw/ 的绝对路径。
+        raw_dir: raw/articles/ 的绝对路径。
 
     Returns:
         包含 metadata 和 reports 列表的索引 dict。
@@ -1144,7 +1144,7 @@ def check_missing(raw_dir: Path) -> list[dict[str, str]]:
     """检查哪些报告文件缺失。
 
     Args:
-        raw_dir: llm_wiki/raw/ 的绝对路径。
+        raw_dir: raw/articles/ 的绝对路径。
 
     Returns:
         缺失报告列表。
@@ -1221,14 +1221,14 @@ def main() -> None:
         "--output",
         type=str,
         default=None,
-        help="index.json 输出路径 (默认: llm_wiki/index.json)",
+        help="index.json 输出路径 (默认: wiki/index.json)",
     )
     args = parser.parse_args()
 
     # 确定路径
     script_dir = Path(os.path.dirname(os.path.abspath(__file__)))
-    wiki_dir = script_dir.parent
-    raw_dir = wiki_dir / "raw"
+    wiki_dir = script_dir.parent / "wiki"
+    raw_dir = script_dir.parent / "raw" / "articles"
     output_path = Path(args.output) if args.output else wiki_dir / "index.json"
 
     if args.check:

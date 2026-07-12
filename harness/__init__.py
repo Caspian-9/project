@@ -20,7 +20,7 @@ Architecture:
   │                                  │        │
   │  ┌───────────────────────────────┘        │
   │  │  Persistence (外部持久化)               │
-  │  │  Wiki Integration (llm_wiki)            │
+  │  │  Wiki Integration (wiki)            │
   │  └────────────────────────────────────────┘
   └──────────────────────────────────────────┘
 
@@ -30,7 +30,13 @@ Workflow:
   3. ANALYZE: 多维度分析 → IC/分层/暴露/归因 → Markdown 报告
 """
 
-from harness.analysis_engine import FactorAnalysis, analyze_factor, compare_analyses
+from harness.analysis_engine import (
+    FactorAnalysis,
+    RobustnessResult,
+    analyze_factor,
+    compare_analyses,
+    robustness_check,
+)
 from harness.context import ContextBudget, ContextManager
 from harness.factor_engine import VariantGenerator, generate_variant_ideas
 from harness.llm_provider import (
@@ -68,8 +74,10 @@ __all__ = [
     "generate_variant_ideas",
     # 分析引擎
     "FactorAnalysis",
+    "RobustnessResult",
     "analyze_factor",
     "compare_analyses",
+    "robustness_check",
     # 工具
     "TOOL_SCHEMAS",
     "ToolExecutor",

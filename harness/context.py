@@ -77,7 +77,7 @@ class ContextBudget:
 class ContextManager:
     """上下文管理器 — 为每个研究阶段组装上下文。
 
-    集成 llm_wiki 知识库，在 Layer 1 注入相关知识卡片。
+    集成 wiki 知识库，在 Layer 1 注入相关知识卡片。
     """
 
     budget: ContextBudget = field(default_factory=ContextBudget)

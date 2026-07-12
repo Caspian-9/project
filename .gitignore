@@ -1,4 +1,4 @@
-# 报告文档
+# 报告文档（raw/ 下的 PDF/DOC/CAJ 不跟踪）
 *.pdf
 *.csv
 *.caj
@@ -10,5 +10,12 @@ __MACOSX/
 .DS_Store
 ._*
 
-# Harness 运行时
-harness_workspace/
+# 运行时产物
+data/bar/
+research/sessions/
+research/**/results/
+output/reports/
+output/configs/
+
+# Python
+__pycache__/

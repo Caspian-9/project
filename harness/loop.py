@@ -45,17 +45,17 @@ class QuantHarness:
         workspace: Optional[Path] = None,
         data: Optional[MarketData] = None,
         llm: Optional[LLMProvider] = None,
-        wiki_dir: str = "llm_wiki",
+        wiki_dir: str = "wiki",
     ) -> None:
         """初始化 Harness。
 
         Args:
-            workspace: 工作空间目录（默认 harness_workspace/）。
+            workspace: 工作空间目录（默认 research/）。
             data: 市场数据（默认生成合成数据用于测试）。
             llm: LLM 提供商（默认 MockLLMProvider 用于测试）。
-            wiki_dir: llm_wiki 目录路径。
+            wiki_dir: wiki 目录路径。
         """
-        self.workspace = workspace or Path("harness_workspace")
+        self.workspace = workspace or Path("research")
         self.workspace.mkdir(parents=True, exist_ok=True)
 
         self.data = data or generate_synthetic_data()

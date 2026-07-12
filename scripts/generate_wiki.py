@@ -26,7 +26,6 @@ def gen_source_page(report: dict[str, Any]) -> str:
     keywords = report.get("keywords", [])
     category = report.get("category", "")
     subcategory = report.get("subcategory", "")
-    status = report.get("status", "unknown")
     has_real_abstract = bool(report.get("abstract_source"))
 
     tags = ", ".join(keywords[:6]) if keywords else ""
@@ -71,7 +70,7 @@ tags: [{tags}]
     if not related_entities:
         page += "\n_待补充 — ingest 完整报告后自动关联_\n"
 
-    page += f"""
+    page += """
 ## 相关来源
 
 _待补充 — ingest 更多报告后自动建立交叉引用_
@@ -289,7 +288,7 @@ def gen_log_md(prev_log: str, ingested_count: int) -> str:
 
 
 def main() -> None:
-    wiki_dir = Path(__file__).parent.parent / "wiki"
+    wiki_dir = Path(__file__).parent.parent / "wiki" / "wiki"
     idx_path = Path(__file__).parent.parent / "index.json"
 
     with open(idx_path, encoding="utf-8") as f:

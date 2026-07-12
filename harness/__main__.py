@@ -113,8 +113,8 @@ def main() -> None:
         description="Quant Harness — 量化因子研究 REPL",
         prog="python -m harness",
     )
-    parser.add_argument("--workspace", default="harness_workspace", help="工作空间目录")
-    parser.add_argument("--wiki-dir", default="llm_wiki", help="llm_wiki 目录")
+    parser.add_argument("--workspace", default="research", help="工作空间目录")
+    parser.add_argument("--wiki-dir", default="wiki", help="wiki 目录")
     parser.add_argument("--model", default=None, help="LLM 模型名 (默认: ANTHROPIC_MODEL 环境变量 或 claude-sonnet-5)")
     parser.add_argument("--api-key", default=None, help="Anthropic API key (默认: ANTHROPIC_API_KEY 环境变量)")
     parser.add_argument("--base-url", default=None, help="自定义 API 端点/代理地址 (默认: ANTHROPIC_BASE_URL 环境变量)")

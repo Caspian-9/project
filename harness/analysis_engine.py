@@ -191,3 +191,107 @@ def compare_analyses(analyses: list[FactorAnalysis]) -> pd.DataFrame:
             "stability": a.ic_stability,
         })
     return pd.DataFrame(rows).sort_values("IC_IR", key=abs, ascending=False)
+
+
+# ======================== 稳健性验证 ========================
+
+
+@dataclass
+class RobustnessResult:
+    """稳健性验证结果。"""
+
+    factor_name: str
+
+    # 分段测试
+    first_half_ic_ir: float
+    second_half_ic_ir: float
+    split_test_passed: bool
+
+    # 参数稳定性
+    parameter_stability: str  # "plateau" | "peak" | "unknown"
+
+    # 分池验证
+    pool_ic_irs: dict[str, float]  # {pool_name: IC_IR}
+
+    # 决策
+    decision: str  # "graduate" | "needs_work" | "discard"
+    reasoning: str
+
+
+def robustness_check(
+    factor_name: str,
+    ic_series: pd.Series,
+    param_sweep_results: Optional[list[dict[str, Any]]] = None,
+    pool_ic_irs: Optional[dict[str, float]] = None,
+) -> RobustnessResult:
+    """执行因子稳健性验证（参考 AGENTS.md Step 6）。
+
+    Args:
+        factor_name: 因子名。
+        ic_series: Rank IC 时间序列。
+        param_sweep_results: 参数扫描结果列表（含 score/IC_IR 等）。
+        pool_ic_irs: 分池 IC_IR dict。
+
+    Returns:
+        RobustnessResult 含决策建议。
+    """
+    # ── 1. 分段测试 ──
+    mid = len(ic_series) // 2
+    first_half = ic_series.iloc[:mid]
+    second_half = ic_series.iloc[mid:]
+
+    fh_ir = float(first_half.mean() / first_half.std()) if first_half.std() > 0 else 0.0
+    sh_ir = float(second_half.mean() / second_half.std()) if second_half.std() > 0 else 0.0
+
+    # 两段方向一致 + 绝对值 > 0.2
+    split_ok = (
+        (fh_ir > 0.2 and sh_ir > 0.2)
+        or (fh_ir < -0.2 and sh_ir < -0.2)
+    )
+
+    # ── 2. 参数稳定性 ──
+    stability = "unknown"
+    if param_sweep_results and len(param_sweep_results) >= 4:
+        scores = [r.get("ic_ir", r.get("score", 0)) for r in param_sweep_results]
+        max_score = max(abs(s) for s in scores)
+        mean_score = sum(abs(s) for s in scores) / len(scores)
+        # 高原型: 均值接近最大值；尖峰型: 最大值远超均值
+        if mean_score > 0 and max_score / mean_score < 1.5:
+            stability = "plateau"
+        else:
+            stability = "peak"
+
+    # ── 3. 决策矩阵 (AGENTS.md Step 7 适配) ──
+    abs_ir = abs(fh_ir + sh_ir) / 2  # 平均 |IC_IR|
+
+    decision = "needs_work"
+    reasoning_parts: list[str] = []
+
+    if split_ok and stability == "plateau" and abs_ir > 0.5:
+        decision = "graduate"
+        reasoning_parts.append(f"分段测试通过({fh_ir:.2f}/{sh_ir:.2f})")
+        reasoning_parts.append(f"参数高原型, |IC_IR|={abs_ir:.2f}>0.5")
+    elif split_ok and stability == "plateau" and abs_ir > 0.2:
+        decision = "needs_work"
+        reasoning_parts.append(f"分段测试通过但|IC_IR|={abs_ir:.2f}<0.5")
+        reasoning_parts.append("建议: 加入行业/风格中性化后重试")
+    elif not split_ok or stability == "peak":
+        decision = "needs_work"
+        reasoning_parts.append(
+            f"分段测试{'通过' if split_ok else '不通过'}, 参数{stability}型"
+        )
+        reasoning_parts.append("建议: 减少参数、简化因子结构")
+    if abs_ir < 0.15:
+        decision = "discard"
+        reasoning_parts.append(f"|IC_IR|={abs_ir:.2f}<0.15, 因子无稳健预测能力")
+
+    return RobustnessResult(
+        factor_name=factor_name,
+        first_half_ic_ir=fh_ir,
+        second_half_ic_ir=sh_ir,
+        split_test_passed=split_ok,
+        parameter_stability=stability,
+        pool_ic_irs=pool_ic_irs or {},
+        decision=decision,
+        reasoning="; ".join(reasoning_parts),
+    )

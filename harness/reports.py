@@ -154,7 +154,7 @@ _待补充 — 构建常见因子库后，计算因子间的截面相关性_
     return report
 
 
-def save_report(report: str, output_dir: str = "harness_workspace/reports") -> Path:
+def save_report(report: str, output_dir: str = "output/reports") -> Path:
     """保存报告到文件。
 
     Args:

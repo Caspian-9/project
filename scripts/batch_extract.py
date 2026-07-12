@@ -6,7 +6,6 @@
 from __future__ import annotations
 
 import json
-import os
 import re
 from pathlib import Path
 
@@ -36,7 +35,7 @@ def extract_first_page(filepath: Path) -> str:
     # 2. 合并多余空白行
     text = re.sub(r"\n{3,}", "\n\n", text)
     # 3. 按行拆分
-    lines = [l.strip() for l in text.split("\n")]
+    lines = [ln.strip() for ln in text.split("\n")]
     # 4. 过滤低信息行
     junk_patterns = [
         r"^请.*阅读.*免责",
@@ -92,8 +91,8 @@ def extract_first_page(filepath: Path) -> str:
 
 
 def main() -> None:
-    wiki_dir = Path(__file__).parent.parent
-    raw_dir = wiki_dir / "raw"
+    wiki_dir = Path(__file__).parent.parent / "wiki"
+    raw_dir = Path(__file__).parent.parent / "raw" / "articles"
     idx_path = wiki_dir / "index.json"
 
     with open(idx_path, encoding="utf-8") as f:

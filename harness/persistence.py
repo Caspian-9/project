@@ -26,7 +26,7 @@ class HarnessPersistence:
         """初始化持久化层。
 
         Args:
-            workspace: harness_workspace/ 目录路径。
+            workspace: research/ 目录路径。
         """
         self.workspace = workspace
         self.sessions_dir = workspace / "sessions"
