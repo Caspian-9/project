@@ -60,3 +60,15 @@ Agent(
 - 通过 `Workflow` 编排的 agent 集群
 
 子 agent 在核查他人工作时，自身也需遵守约束一（列出待办 → 核查 → 结论）。
+
+---
+
+## 三、版本管理
+
+每完成一个阶段性任务（即 TaskCreate 的单个待办子任务标记为 `completed` 后），**必须**执行 `git commit` 保存进度：
+
+- Commit message 格式: `[{task_id}] {subject}`，如 `[Task #12] Phase 0: 搭建 backtest/ 最小可用引擎`
+- 如果多个相关子任务在同一批次完成，可以合并为一个 commit，message 列出所有 task id
+- Commit 前确认 ruff + mypy 已通过（属于任务本身的完成标准）
+
+Co-Authored-By: Claude <noreply@anthropic.com>

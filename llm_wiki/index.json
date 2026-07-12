@@ -4,8 +4,8 @@
     "version": "2.0",
     "description": "服务于 Quant Harness 的研究报告知识库，覆盖多因子选股、行业轮动、技术指标、动量反转、资金流等量化策略领域。",
     "generated_at": "2026-07-11T10:13:34.854447",
-    "total_reports": 84,
-    "total_found": 84,
+    "total_reports": 85,
+    "total_found": 85,
     "total_missing": 0
   },
   "reports": [
@@ -1634,6 +1634,32 @@
       "file_hash_sha256": "678a0e9f343ade482293e9a505c4c2836c71a61e961bc054f03618fcac350190",
       "note": "自动发现的新文件，待手动补充元数据",
       "abstract_source": "PDF第一页自动提取"
+    },
+    {
+      "id": "sz_mf_001",
+      "path": "截面多因子课件及脚本/南方科大量化课程4_多因子Quant Lab.pdf",
+      "title": "南科大量化课程4：多因子Quant Lab",
+      "source": "南方科技大学",
+      "date": "2026-07-11",
+      "keywords": [
+        "多因子模型",
+        "机器学习",
+        "Alpha框架",
+        "Lasso",
+        "LightGBM",
+        "LSTM",
+        "DoubleEnsemble",
+        "CSI300",
+        "CSI1000",
+        "vnpy.alpha"
+      ],
+      "category": "课程课件与代码",
+      "subcategory": "ML量化选股",
+      "abstract": "南方科技大学AI辅助量化研究课程第4课。完整讲授基于vnpy.alpha框架的截面多因子ML选股流程：AlphaLab数据管理 → Alpha158因子集特征计算 → Lasso/LightGBM/LSTM/DoubleEnsemble四种模型训练 → Alphalens信号评估 → BacktestingEngine策略回测。含8个Jupyter Notebook和2个Python模型实现（doubleensemble_model.py, lstm_model.py），覆盖CSI300和CSI1000两个指数。CSI300回测（2017-2020）：LSTM年化62.24%/Sharpe 1.54，DoubleEnsemble年化61.88%/Sharpe 1.64，LightGBM年化48.16%/Sharpe 1.26。",
+      "status": "available",
+      "file_size_bytes": 3599207,
+      "file_hash_sha256": "",
+      "abstract_source": "人工编写（含PDF课件+代码分析）"
     }
   ]
 }

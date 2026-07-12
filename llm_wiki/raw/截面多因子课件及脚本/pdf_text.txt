@@ -1,0 +1,456 @@
+AI  AI Assisted Quant Research Lab
+By  2026-07-11 
+
+
+
+ vnpy[alpha]
+
+ 
+
+ 
+
+ 
+
+© 2026 AI 
+
+Alpha
+
+vnpy.alpha
+
+lab logging
+
+dataset model strategy
+
+  
+
+© 2026 AI 
+
+
+
+
+
+· Alpha
+
+
+
+·  > 
+
+
+
+· 300 / 500 / 1000
+
+
+
+· 
+
+© 2026 AI 
+
+
+
+·  · 
+
+·  +  · Beta
+© 2026 AI 
+
+
+
+
+· 
+
+
+· 
+
+
+· 
+
+© 2026 AI 
+
+
+
+ A B C D E
+
+ 0.82 0.76 0.51 0.43 0.20
+
+ 1 2 3 4 5
+
+     
+
+© 2026 AI 
+
+
+
+
+
+
+
+
+
+ML
+
+
+
+PE
+
+OLS
+
+
+© 2026 AI 
+
+
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+© 2026 AI 
+
+Alphalens
+
+ 
+
+ 
+
+IC
+
+
+
+ 
+© 2026 AI 
+
+
+
+ 
+
+ 
+
+ 
+
+
+© 2026 AI 
+
+OLS
+
+ 
+
+
+
+OLS
+
+X
+
+y
+
+ 
+
+ 
+
+© 2026 AI 
+
+
+
+      
+
+  
+  
+
+
+© 2026 AI 
+
+ML
+
+Lasso
+·  · 
+
+LightGBM
+·  · 
+
+LSTM
+·  · 
+
+DoubleEnsemble
+· ML · 
+
+© 2026 AI 
+
+ML
+
+
+
+
+
+
+
+
+
+
+
+
+
+ML
+
+
+
+
+
+
+© 2026 AI 
+
+Alphalens
+
+
+
+
+10%
+
+10%
+
+...
+
+10%
+
+ 
+
+
+
+© 2026 AI 
+
+
+
+
+·  · 
+
+
+·  · 
+
+
+·  · 
+
+© 2026 AI 
+
+vnpy.alpha
+vnpy.alpha
+ ML  
+
+AlphaDataset
+
+AlphaModel
+
+AlphaStrategy
+
+BacktestingEngine
+
+© 2026 AI 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2026 AI 
+
+AlphaLab
+
+
+
+AlphaLab
+
+ 
+
+
+
+  
+
+
+
+
+
+ © 2026 AI 
+
+
+
+ 
+
+ 
+
+ 
+
+© 2026 AI 
+
+
+
+save_component_data 
+
+index_symbol 
+index_components 
+
+str 
+dict 
+
+str 
+list[str] 
+
+© 2026 AI 
+
+
+datafeed.query_bar_history
+· 
+lab.save_bar_data
+· 
+© 2026 AI 
+
+
+
+load_bar_df
+
+vt_symbols
+
+interval
+
+start
+
+end
+
+extend_days
+
+
+
+K
+
+
+
+
+
+
+
+© 2026 AI 
+
+
+load_component_symbols
+
+load_component_filters
+
+© 2026 AI 
+
+
+
+vt_symbol
+·
+
+pricetick
+· 
+
+add_contract_setting
+
+long_rate
+·
+
+size
+·
+
+short_rate
+·
+
+© 2026 AI 
+
+
+
+
+·  
+
+ 
+
+
+·  
+
+© 2026 AI 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2026 AI 
+
+
+
+·  ·  · 
+
+·  ·  · 
+© 2026 AI 
+
+
+
+AlphaDataset
+
+ 
+
+  
+
+
+
+
+
+
+
+
+
+add_feature
+
+
+
+set_label
+
+
+
+add_processor
+
+
+
+prepare_data
+
+
+
+fetch_xxx
+
+
+
+show_xxx
+
+© 2026 AI 
+
+

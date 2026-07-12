@@ -7,7 +7,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Literal
+from typing import Any, Literal, Optional
 
 import numpy as np
 import pandas as pd
@@ -73,12 +73,88 @@ class FactorBacktestEngine:
             n_quantiles: 分位数（默认 5 组）。
             weighting: 组合加权方式，equal 或 value（市值）。
             holding_periods: 持仓周期数（1 = 下一期）。
+
+        注意: 如需数据清洗或风格中性化，请在传入 engine 之前
+        使用 DataPipeline 和 StyleNeutralizer 预处理因子值。
+        这样可以保持 engine 的纯粹性——它只负责：因子值 → 收益计算。
         """
         if n_quantiles < 2:
             raise ValueError("n_quantiles 至少为 2")
         self.n_quantiles = n_quantiles
         self.weighting = weighting
         self.holding_periods = holding_periods
+
+    @staticmethod
+    def compute_full_report(
+        factor_name: str,
+        factor_values: pd.DataFrame,
+        returns: pd.DataFrame,
+        asset_info: Optional[pd.DataFrame] = None,
+        benchmark_returns: Optional[pd.Series] = None,
+        n_quantiles: int = 5,
+    ) -> dict[str, Any]:
+        """计算完整的因子分析报告（静态 + 动态 + 情境）。
+
+        这是国信证券框架的完整实现入口。
+        一次性返回全部三维度的分析结果。
+
+        Args:
+            factor_name: 因子名。
+            factor_values: (time, asset) 因子值。
+            returns: (time, asset) 收益率。
+            asset_info: 资产信息（行业、市值、风格）。
+            benchmark_returns: 基准收益序列。
+            n_quantiles: 分位数。
+
+        Returns:
+            {static, dynamic, context} 三维度完整分析 dict。
+        """
+        from backtest.dynamic_analysis import compute_full_dynamic_metrics
+        from backtest.context_analysis import (
+            compute_full_context_metrics,
+            compute_ic_by_pool,
+        )
+
+        # 从收益率反推价格用于 MarketData
+        prices = (1 + returns.fillna(0.0)).cumprod()
+        volumes = pd.DataFrame(
+            1.0, index=returns.index, columns=returns.columns
+        )
+
+        # 静态分析
+        engine = FactorBacktestEngine(n_quantiles=n_quantiles)
+        result = engine.run(
+            MarketData(prices=prices, volumes=volumes),
+            factor_values,
+            factor_name=factor_name,
+        )
+
+        # 动态分析
+        dynamic = compute_full_dynamic_metrics(
+            factor_name, factor_values, returns, n_quantiles
+        )
+
+        # 情境分析
+        context = compute_full_context_metrics(
+            factor_name, factor_values, returns, asset_info, benchmark_returns
+        )
+
+        # 股票池分析（默认三大指数）
+        pool_masks: dict[str, pd.Index] = {}
+        if asset_info is not None:
+            if "pool" in asset_info.columns:
+                for pool_name in asset_info["pool"].dropna().unique():
+                    pool_masks[pool_name] = asset_info.index[
+                        asset_info["pool"] == pool_name
+                    ]
+        if pool_masks:
+            context.by_pool = compute_ic_by_pool(factor_values, returns, pool_masks)
+
+        return {
+            "static": result,
+            "dynamic": dynamic,
+            "context": context,
+        }
 
     def run(
         self,

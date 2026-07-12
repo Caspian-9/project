@@ -38,6 +38,13 @@
 │   ├── 分析师覆盖变化
 │   └── 基金持有人选基能力
 │
+├── 课程与代码实践 (新增)
+│   └── 南科大量化课程4：多因子Quant Lab
+│       ├── vnpy.alpha 框架: AlphaLab → Dataset → Model → BacktestingEngine
+│       ├── Alpha158 因子集 + Alphalens 评估
+│       ├── ML 模型对比: Lasso / LightGBM / LSTM / DoubleEnsemble
+│       └── CSI300 和 CSI1000 实战回测
+│
 └── 学术研究
     ├── 遗传算法风格选股
     ├── 因子选股模型实证
@@ -49,6 +56,7 @@
 
 | 主题 | 相关报告数 | Wiki 覆盖 |
 |------|-----------|-----------|
+| ML 量化选股 | 1 | 新增 |
 | 多因子选股 | 20+ | 待 distill |
 | 动量 / 反转 | 8+ | 待 distill |
 | 技术指标 | 9 | 待 distill |
@@ -64,4 +72,5 @@
 - [ ] A 股动量效应是否存在？短期反转 vs 中期动量的分界在哪里？
 - [ ] 技术指标选股的样本外表现如何？
 - [ ] 行业轮动策略中哪些行业更适合量化选股？
-- [ ] 传统多因子模型与机器学习方法（遗传算法等）的优劣？
+- [ ] 传统多因子模型与机器学习方法（遗传算法、GBDT、LSTM等）的优劣？
+- [x] ML量化选股实战（Lasso/LightGBM/LSTM/DoubleEnsemble）— 见 [[sources/sz_mf_001]]

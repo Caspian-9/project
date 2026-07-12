@@ -27,3 +27,14 @@
 - 5 个概念 (4 growing, 1 stub) — 含定义 + 引用来源
 - 2 个综合分析 (evolving) — 动量vs反转 + 技术指标横向对比
 - 所有实体均从 75 篇源文件摘要中自动提取相关内容
+
+## [2026-07-12] ingest | 南科大量化课程4：多因子Quant Lab（截面多因子课件及脚本）
+
+- 新增源文件摘要: [[sources/sz_mf_001]]
+- 该源包含 1 份课件PDF + 8 个Jupyter Notebook + 2 个Python模型实现
+- 覆盖4种ML选股模型：Lasso、LightGBM、LSTM、DoubleEnsemble
+- 涉及 CSI300 和 CSI1000 两个指数成分股
+- 更新 [[strategies/multi-factor-strategy]]: 新增 ML 增强多因子选股的回测对比表
+- 更新 [[concepts/overfitting]]: 新增早停、正则化、Optuna超参数优化等防控手段
+- 更新 [[concepts/factor-testing]]: 新增现代因子测试工具链（Alphalens + vnpy.alpha）
+- 本次 ingest 是 wiki 首个含可执行代码的源文件，标志着知识库从纯研究报告向代码+报告融合演进
