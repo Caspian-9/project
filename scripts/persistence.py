@@ -15,8 +15,8 @@ from pathlib import Path
 from typing import Any, Optional
 
 
-from backtest.engine import BacktestResult
-from harness.workflow import FactorResearchWorkflow
+from scripts.engine import BacktestResult
+from scripts.workflow import FactorResearchWorkflow
 
 
 class HarnessPersistence:

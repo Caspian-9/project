@@ -1,4 +1,4 @@
-"""Harness CLI 入口 — python -m harness <subcommand>
+"""Harness CLI 入口 — python -m scripts <subcommand>
 
 子命令:
   repl              交互式 REPL（默认）
@@ -14,14 +14,13 @@ import os
 import sys
 from pathlib import Path
 
-from harness.loop import QuantHarness
-from harness.llm_provider import AnthropicProvider, LLMProvider, MockLLMProvider
+from scripts.data import generate_synthetic_data
+from scripts.llm_provider import AnthropicProvider, LLMProvider, MockLLMProvider
+from scripts.loop import QuantHarness
 
 
 def cmd_repl(args: argparse.Namespace) -> None:
     """启动交互式 REPL。"""
-    from backtest.data import generate_synthetic_data
-
     data = generate_synthetic_data()
 
     llm: LLMProvider
@@ -51,8 +50,6 @@ def cmd_repl(args: argparse.Namespace) -> None:
 
 def cmd_run(args: argparse.Namespace) -> None:
     """一次性执行研究工作流。"""
-    from backtest.data import generate_synthetic_data
-
     data = generate_synthetic_data()
     api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY", "")
     llm: LLMProvider = (
@@ -111,22 +108,21 @@ def cmd_list(args: argparse.Namespace) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Quant Harness — 量化因子研究 REPL",
-        prog="python -m harness",
+        prog="python -m scripts",
     )
     parser.add_argument("--workspace", default="research", help="工作空间目录")
     parser.add_argument("--wiki-dir", default="wiki", help="wiki 目录")
-    parser.add_argument("--model", default=None, help="LLM 模型名 (默认: ANTHROPIC_MODEL 环境变量 或 claude-sonnet-5)")
-    parser.add_argument("--api-key", default=None, help="Anthropic API key (默认: ANTHROPIC_API_KEY 环境变量)")
-    parser.add_argument("--base-url", default=None, help="自定义 API 端点/代理地址 (默认: ANTHROPIC_BASE_URL 环境变量)")
-    parser.add_argument("--mock", action="store_true", help="使用 Mock LLM（不调用真实 API）")
+    parser.add_argument("--model", default=None, help="LLM 模型名")
+    parser.add_argument("--api-key", default=None, help="Anthropic API key")
+    parser.add_argument("--base-url", default=None, help="自定义 API 端点/代理地址")
+    parser.add_argument("--mock", action="store_true", help="使用 Mock LLM")
 
     sub = parser.add_subparsers(dest="command", help="子命令")
-
     p_repl = sub.add_parser("repl", help="启动交互式 REPL")
     p_repl.set_defaults(func=cmd_repl)
 
     p_run = sub.add_parser("run", help="一次性研究工作流")
-    p_run.add_argument("--report", help="llm_wiki 报告 ID")
+    p_run.add_argument("--report", help="wiki 报告 ID")
     p_run.add_argument("--factor", help="因子名称")
     p_run.add_argument("--rationale", help="经济逻辑说明")
     p_run.set_defaults(func=cmd_run)
@@ -142,7 +138,6 @@ def main() -> None:
     if args.command is None:
         parser.print_help()
         sys.exit(1)
-
     args.func(args)
 
 

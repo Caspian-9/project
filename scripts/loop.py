@@ -14,16 +14,16 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Optional
 
-from backtest.data import MarketData, generate_synthetic_data
-from backtest.engine import FactorBacktestEngine
-from harness.analysis_engine import analyze_factor
-from harness.context import ContextManager
-from harness.factor_engine import VariantGenerator
-from harness.llm_provider import LLMProvider, MockLLMProvider
-from harness.persistence import HarnessPersistence
-from harness.reports import generate_factor_report
-from harness.tools import TOOL_SCHEMAS, ToolExecutor, load_wiki_index
-from harness.workflow import (
+from scripts.data import MarketData, generate_synthetic_data
+from scripts.engine import FactorBacktestEngine
+from scripts.analysis import analyze_factor
+from scripts.tools import ContextManager
+from scripts.workflow import VariantGenerator
+from scripts.llm_provider import LLMProvider, MockLLMProvider
+from scripts.persistence import HarnessPersistence
+from scripts.workflow import generate_factor_report
+from scripts.tools import TOOL_SCHEMAS, ToolExecutor, load_wiki_index
+from scripts.workflow import (
     PHASE_PROMPTS,
     FactorResearchPhase,
     FactorResearchWorkflow,

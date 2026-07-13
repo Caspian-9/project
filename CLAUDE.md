@@ -78,28 +78,18 @@ Agent(
 
 ```
 project/
-├── backtest/                    确定性计算模块（无 LLM 依赖）
-│   ├── data.py                  市场数据加载 + 合成数据生成
-│   ├── data_pipeline.py         数据清洗管线（MAD异常值/样本筛选/幸存者偏差）
-│   ├── factor_builder.py        因子 DSL：FactorDef → 因子值矩阵
-│   ├── engine.py                向量化回测引擎 + compute_full_report()
-│   ├── metrics.py               因子绩效指标汇总（IC/分层/多空）
-│   ├── style_neutralizer.py     四层风格过滤（标准化/分位/权重/残余收益率）
-│   ├── dynamic_analysis.py      动态分析（IC衰变/自相关/信号持续/换手率）
-│   └── context_analysis.py      情境分析（分市场阶段/行业/风格/股票池/日历）
-
-├── harness/                     LLM 包裹层
-│   ├── loop.py                  QuantHarness 主循环（REPL + API + 多轮 tool_use）
-│   ├── workflow.py              四阶段状态机 + Prompt 模板
-│   ├── factor_engine.py         变体生成器（参数/窗口/变量/组合）+ 思路建议
-│   ├── analysis_engine.py       多维度因子分析 + A/B/C/D 评级 + 稳健性验证
-│   ├── reports.py               Markdown 报告生成 + LLM 压缩摘要
-│   ├── tools.py                 5 个工具 Schema + ToolExecutor（JSON校验+文本回退）
-│   ├── context.py               四层上下文注入 + Token 预算 + Wiki 集成
-│   ├── persistence.py           会话/产物/知识卡片 持久化
-│   ├── llm_provider.py          AnthropicProvider + MockLLMProvider
-│   ├── __main__.py              CLI 入口（repl/run/resume/list）
-│   └── __init__.py
+├── scripts/                     量化因子研究框架（按工作流聚合）
+│   ├── data.py                  市场数据 + MAD清洗管线
+│   ├── factor.py                因子DSL + 四层风格中性化
+│   ├── engine.py                向量化回测引擎 + 绩效指标
+│   ├── analysis.py              动态分析 + 情境分析 + 稳健性验证
+│   ├── workflow.py              状态机 + 变体生成 + 报告
+│   ├── tools.py                 工具契约 + 上下文管理
+│   ├── persistence.py           持久化
+│   ├── llm_provider.py          LLM API 抽象
+│   ├── loop.py                  REPL 主循环
+│   ├── __init__.py              导出
+│   └── __main__.py              CLI 入口
 
 ├── raw/                          不可变源文件
 │   └── articles/                 研究报告（9 个分类子目录，84 篇 PDF/DOC/CAJ）
