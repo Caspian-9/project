@@ -1,0 +1,5150 @@
+{
+    "002470.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600598.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600158.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002756.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002078.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000822.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601828.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000520.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000333.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600569.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600220.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600373.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601601.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601995.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000932.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601108.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002600.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300133.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688187.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002653.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000627.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601231.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601611.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600600.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000553.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000733.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601898.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603019.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688111.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002069.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000776.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000960.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600395.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000631.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000997.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601766.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600037.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601666.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002183.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002010.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600808.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600688.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600905.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300014.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600246.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002073.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600606.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600339.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688008.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600111.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601118.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300058.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600978.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601728.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600522.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601077.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600832.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002085.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600787.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601628.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300979.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688041.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600977.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000792.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600501.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688396.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600718.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002791.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600410.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000036.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000876.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600058.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603338.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601857.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688126.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600021.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600968.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "003816.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601727.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600482.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601888.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600160.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000100.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002465.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000596.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002241.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000555.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600266.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000686.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000858.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002773.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300223.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600748.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002352.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600827.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600369.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002044.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000612.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600143.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000961.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600489.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600050.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600012.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600376.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002155.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688363.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600170.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688256.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002603.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000572.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000024.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000422.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002424.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002131.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000826.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601117.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601929.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600521.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002463.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000698.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002081.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600270.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002422.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000039.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601198.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600926.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002152.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600010.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601788.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601618.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600252.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601012.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603659.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600121.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600705.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600690.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002106.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601881.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000068.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002065.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600660.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600918.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300182.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601668.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600997.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300024.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002493.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600308.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600231.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000012.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601155.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000099.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600779.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600380.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601899.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600919.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000750.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600361.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600372.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000617.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600269.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000562.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601939.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600812.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002797.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600515.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300418.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603296.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002074.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600118.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600151.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601168.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600653.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600675.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002275.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603858.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600611.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002460.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000927.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002673.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601166.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601997.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601398.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600020.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601699.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601107.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002508.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600601.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300072.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300454.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000069.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601328.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601016.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000661.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000755.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600432.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600657.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600732.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600663.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "001965.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601916.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603369.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600839.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600941.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600350.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600019.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600588.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000712.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601158.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000709.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000623.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600403.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601878.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688303.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002097.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002431.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000002.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000550.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600023.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600006.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000898.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601958.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601106.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601988.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300760.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600875.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002007.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601369.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300601.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601288.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601003.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000939.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600415.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300144.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600390.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600161.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600177.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600299.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000938.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002920.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600009.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600340.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002242.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600662.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600616.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600570.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000541.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601990.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002311.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600196.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000021.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600834.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600546.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600205.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601360.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603259.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600331.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600312.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002083.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600602.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300676.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600754.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002736.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603260.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600062.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000601.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002025.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002027.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603290.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603833.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300308.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688223.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600029.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600216.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300033.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600267.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601696.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603799.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002958.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300251.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600320.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002252.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002052.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300450.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002414.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600863.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601268.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300999.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601838.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002028.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300142.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600460.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600961.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002939.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300558.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002049.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600635.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600747.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600783.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000793.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600100.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600102.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000725.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000738.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002498.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601600.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300104.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600035.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300498.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000897.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600595.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603233.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002475.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601006.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000951.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002236.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000488.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002570.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000089.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600406.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600519.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600970.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000536.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600000.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600845.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000528.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002831.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000831.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002500.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600089.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000690.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601658.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000009.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600823.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600171.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000543.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002024.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600039.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600456.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000559.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000166.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601989.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002426.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002839.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000968.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300296.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600208.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600703.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600166.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600153.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002146.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601566.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601225.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600296.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600999.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300003.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600098.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601111.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002110.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600277.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603501.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000029.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600109.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002050.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600704.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603288.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600884.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600188.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600508.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600016.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601801.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600809.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600873.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600251.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000751.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000800.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600597.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600596.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601799.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002129.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600117.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601139.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600074.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600259.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688009.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000883.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601872.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601186.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601319.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600011.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300628.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000930.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000937.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600685.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601877.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601377.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600666.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600307.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601608.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601808.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600025.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600123.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601928.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300017.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002555.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600481.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300122.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002180.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600169.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002230.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601633.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300832.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601933.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000685.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600566.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600959.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000652.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002244.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601669.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600022.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300027.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601228.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688005.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002399.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300769.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600851.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600880.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600517.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688036.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600001.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601698.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600733.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300919.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600108.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600418.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002572.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000066.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600786.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300274.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000538.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002378.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002938.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000656.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300751.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600068.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000423.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601212.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603000.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002179.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600198.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603658.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600797.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600472.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600643.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002558.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600627.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600487.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002821.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002400.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600282.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600018.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601138.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600031.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000959.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601966.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600125.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600438.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601229.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002195.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600649.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002310.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600674.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600352.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600881.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600210.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603986.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002269.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600631.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000061.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600383.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600837.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600333.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601555.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600096.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002064.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600879.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002945.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300896.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000962.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600848.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601098.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002001.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002594.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002601.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600528.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600549.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000900.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "605499.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300002.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601005.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002120.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000157.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600741.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601318.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603699.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002299.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600428.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600583.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000022.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601169.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601258.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000008.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603392.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600004.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000415.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600398.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601099.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600998.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600654.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603160.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002459.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601101.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600239.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600078.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600190.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600316.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002568.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002051.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600027.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600256.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600026.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600332.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600036.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601336.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600958.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600110.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600061.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300316.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000839.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601992.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002375.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300207.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601018.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601865.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002157.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600770.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002092.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603899.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600547.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601059.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002292.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601825.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603806.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600015.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000977.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000568.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601211.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300759.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600548.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000671.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002812.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601558.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600183.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600003.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002032.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300442.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000875.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002008.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600426.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300059.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601066.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002709.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601162.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603885.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000401.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600033.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600446.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000869.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600816.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002353.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600325.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601233.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000680.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000723.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000970.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600518.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601918.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688065.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600066.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600498.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000877.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000878.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300750.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002122.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002625.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002038.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000156.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603185.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002153.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600682.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601009.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002174.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601985.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300677.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002384.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000413.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601577.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601718.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002466.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600017.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601375.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000046.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600633.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600895.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600874.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600088.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300529.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600578.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000829.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000860.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600060.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000540.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000703.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000630.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600038.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600104.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601163.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600868.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600585.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600584.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "001289.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000031.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000729.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000651.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600073.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600717.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600008.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002304.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300136.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603156.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002202.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600971.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601816.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000717.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601991.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002608.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600803.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600859.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603486.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600780.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000301.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600820.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688012.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300888.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600887.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600795.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601919.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600132.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601818.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000503.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600804.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688599.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601299.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600485.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002468.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600276.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603087.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601236.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300957.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600811.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000728.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000786.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300782.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000767.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600309.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601298.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000768.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601607.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603195.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600348.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601969.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601001.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600300.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600867.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600030.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000636.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000539.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601901.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600763.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000758.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600886.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600989.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002739.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600497.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002450.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600909.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600761.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600637.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600377.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000063.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600085.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600639.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300124.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000718.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002371.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002194.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000912.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600664.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000682.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002429.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000629.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000828.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600221.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600200.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600591.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600315.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002602.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300347.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600007.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600739.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600317.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601689.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000625.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688169.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000807.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000963.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000667.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "001979.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600628.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601002.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002344.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600550.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000917.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600028.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300763.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600535.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600079.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000402.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600346.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601390.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688271.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600900.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600655.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300661.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000933.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600150.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002405.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600648.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "605117.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300413.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000581.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300866.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603939.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000895.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600642.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000983.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000338.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600271.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002294.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603517.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600005.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600871.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600157.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002416.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000708.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600893.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002415.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600745.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300496.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601238.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300168.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002841.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600176.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600236.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000780.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300408.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601800.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601615.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000527.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002142.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002624.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600048.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600582.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601717.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600516.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300085.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688082.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600782.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600219.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601179.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002411.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600872.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600297.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000027.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601868.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002385.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002714.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000408.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601588.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "301269.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600760.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603993.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601216.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300315.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600724.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002648.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000761.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000425.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000400.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000783.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300070.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601100.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300015.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600835.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000999.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002925.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002271.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002456.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000969.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000778.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601088.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601021.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600500.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688981.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601688.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "603882.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002410.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600233.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600737.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002916.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600357.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300433.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002607.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "688561.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000060.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601998.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601333.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601519.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "002128.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000001.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600362.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300146.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600938.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "300595.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600894.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601866.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600115.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600436.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000059.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000088.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000410.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600087.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600928.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "601127.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600638.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000598.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "600694.SSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    },
+    "000825.SZSE": {
+        "long_rate": 0.0005,
+        "short_rate": 0.001,
+        "size": 1,
+        "pricetick": 0.0001
+    }
+}

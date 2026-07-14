@@ -5,7 +5,8 @@
   factor.py         — 因子构建与风格中性化
   engine.py         — 向量化回测引擎与绩效指标
   analysis.py       — 动态分析 + 情境分析 + 稳健性验证
-  workflow.py       — 四阶段状态机 + 变体生成 + 报告
+  workflow.py       — 四阶段状态机 + 变体生成 + Markdown 报告
+  report_html.py    — HTML 报告 + Plotly 可视化图表
   tools.py          — 工具契约 + 上下文管理
   persistence.py    — 会话/产物/知识卡片持久化
   llm_provider.py   — LLM API 抽象 (Anthropic/Mock)
@@ -97,6 +98,7 @@ from scripts.llm_provider import (
     MockLLMProvider,
     ToolCall,
 )
+from scripts.report_html import generate_html_report, save_html_report
 from scripts.loop import QuantHarness
 
 __all__ = [
@@ -131,6 +133,8 @@ __all__ = [
     "HarnessPersistence",
     # llm_provider
     "AnthropicProvider", "LLMProvider", "LLMResponse", "MockLLMProvider", "ToolCall",
+    # report_html
+    "generate_html_report", "save_html_report",
     # loop
     "QuantHarness",
 ]
