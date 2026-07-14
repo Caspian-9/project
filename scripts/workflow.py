@@ -26,6 +26,7 @@ class FactorVariant:
     window: int
     agg_func: str
     transform: str = "zscore"
+    operation: str = ""  # ratio | diff | "" — 运算模式
     parent_factor: str = ""  # 派生自哪个原始因子
     variant_type: str = ""  # param_tweak | window_change | new_variable | composite
 
@@ -391,6 +392,7 @@ class VariantGenerator:
                     window=v.window,
                     agg_func=v.agg_func,
                     transform=transform_map.get(v.transform, TransformMethod.ZSCORE),
+                    operation=v.operation if v.operation else None,
                 )
             )
         return defs

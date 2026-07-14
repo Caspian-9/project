@@ -58,6 +58,10 @@ class FactorDef:
     # 可选: 直接引用已有因子名（组合因子用）
     depends_on: Optional[str] = None
 
+    # 运算模式: None=纯滚动聚合, "ratio"=当前值/滚动值, "diff"=当前值-滚动值
+    # 例: GH动量 = price / rolling_max(price, 130) → operation="ratio", agg_func="max"
+    operation: Optional[str] = None  # None | "ratio" | "diff"
+
 
 @dataclass
 class FactorTransform:
@@ -121,6 +125,30 @@ class CompositeFactor:
 
 
 # ======================== 因子计算引擎 ========================
+
+
+def _get_current_values(data: MarketData, base: str) -> pd.DataFrame:
+    """获取当前值矩阵（非滚动），用于 ratio/diff 运算。
+
+    Args:
+        data: 市场数据。
+        base: 基元类型。
+
+    Returns:
+        (time, asset) 当前值矩阵。
+    """
+    base_map: dict[str, pd.DataFrame] = {
+        "returns": data.returns,
+        "price": data.prices,
+        "volume": data.volumes,
+        "high": data.highs if data.highs is not None else data.prices,
+        "low": data.lows if data.lows is not None else data.prices,
+        "open": data.opens if data.opens is not None else data.prices,
+    }
+    result = base_map.get(base)
+    if result is None:
+        raise ValueError(f"不支持的基元类型: {base}")
+    return result
 
 
 def _compute_base_factor(
@@ -192,6 +220,16 @@ def build_factor(
         factor = _compute_base_factor(
             data, factor_def.base, factor_def.window, factor_def.agg_func
         )
+
+    # 应用 operation（ratio/diff）：当前值 vs 滚动聚合值
+    if factor_def.operation == "ratio":
+        current = _get_current_values(data, factor_def.base)
+        aligned = current.loc[factor.index][factor.columns]
+        factor = aligned / factor.replace(0, float("nan"))
+    elif factor_def.operation == "diff":
+        current = _get_current_values(data, factor_def.base)
+        aligned = current.loc[factor.index][factor.columns]
+        factor = aligned - factor
 
     # 应用变换
     transform = FactorTransform(factor_def.transform, factor_def.transform_params)
