@@ -38,3 +38,12 @@
 - 更新 [[concepts/overfitting]]: 新增早停、正则化、Optuna超参数优化等防控手段
 - 更新 [[concepts/factor-testing]]: 新增现代因子测试工具链（Alphalens + vnpy.alpha）
 - 本次 ingest 是 wiki 首个含可执行代码的源文件，标志着知识库从纯研究报告向代码+报告融合演进
+
+## [2026-07-12] backtest-batch | 30因子CSI300批量回测
+
+- 数据: CSI300 859只股票, 3465个交易日 (2010-07-23 ~ 2024-10-30)
+- 因子: 动量9 + 波动9 + 成交量6 + 趋势4 + 反转2 = 30个
+- Top 5: volume_ratio_3m(IC_IR=-0.275), volume_ratio_1m(-0.268), short_reversal(-0.209), volume_volatility(-0.157), price_ma_ratio_1m(-0.150)
+- 全部因子 IC_IR 偏弱（|IC_IR| < 0.3），符合A股市场效率较低的学术共识
+- 成交量类因子整体表现优于价格类，volume_ratio_3m 最强（低成交量→未来收益高）
+- 全部因子页面已更新至 wiki/factors/（30个growing页面含CSI300实证数据）

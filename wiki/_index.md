@@ -183,12 +183,36 @@
 
 | 页面 | 状态 |
 |------|------|
-| [[factors/size-factor]] | stub |
-| [[factors/growth-factor]] | stub |
-| [[factors/quality-factor]] | stub |
-| [[factors/value-factor]] | stub |
-| [[factors/momentum-factor]] | stub |
-| [[factors/profitability-factor]] | stub |
+| [[factors/momentum_1m]] | growing | -0.123 |
+| [[factors/momentum_3m]] | growing | -0.086 |
+| [[factors/momentum_6m]] | growing | -0.056 |
+| [[factors/momentum_12m]] | growing | -0.020 |
+| [[factors/short_reversal]] | growing | -0.209 |
+| [[factors/gh_momentum_26w]] | growing | -0.021 |
+| [[factors/price_52w_high]] | growing | 0.015 |
+| [[factors/price_52w_low]] | growing | -0.102 |
+| [[factors/price_momo_1m]] | growing | -0.066 |
+| [[factors/price_momo_3m]] | growing | -0.062 |
+| [[factors/returns_accel]] | growing | -0.123 |
+| [[factors/volatility_1m]] | growing | -0.103 |
+| [[factors/volatility_3m]] | growing | -0.097 |
+| [[factors/volatility_6m]] | growing | -0.095 |
+| [[factors/volatility_12m]] | growing | -0.098 |
+| [[factors/price_vol_1m]] | growing | -0.082 |
+| [[factors/price_vol_3m]] | growing | -0.076 |
+| [[factors/high_low_spread]] | growing | -0.065 |
+| [[factors/returns_range_1m]] | growing | -0.045 |
+| [[factors/high_price_ratio]] | growing | -0.045 |
+| [[factors/price_ma_ratio_1m]] | growing | -0.150 |
+| [[factors/price_ma_ratio_3m]] | growing | -0.123 |
+| [[factors/price_ma_ratio_6m]] | growing | -0.090 |
+| [[factors/price_trend_6m]] | growing | -0.060 |
+| [[factors/volume_ratio_1m]] | growing | -0.268 |
+| [[factors/volume_ratio_3m]] | growing | -0.275 |
+| [[factors/volume_trend_1m]] | growing | -0.098 |
+| [[factors/volume_trend_3m]] | growing | -0.071 |
+| [[factors/volume_volatility]] | growing | -0.157 |
+| [[factors/volume_price_ratio]] | growing | -0.098 |
 
 ## 技术指标 (`indicators/`)
 
@@ -226,7 +250,7 @@
 
 - 源文件摘要: 76 / 85
 - 策略实体: 10 (all stub)
-- 因子实体: 6 (all stub)
+- 因子实体: 30 (all growing, CSI300回测)
 - 技术指标: 8 (all stub)
 - 概念: 5 (all stub)
 - 综合分析: 2 (planned)
