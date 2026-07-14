@@ -23,6 +23,7 @@ from scripts.data import (
     compute_trend_growth,
     create_default_asset_info,
     generate_synthetic_data,
+    load_csi300,
     load_market_data,
 )
 from scripts.engine import (
@@ -105,7 +106,7 @@ __all__ = [
     # data
     "CleanMethod", "DataPipeline", "Freq", "MarketData", "MissingMethod",
     "PipelineConfig", "compute_trend_growth", "create_default_asset_info",
-    "generate_synthetic_data", "load_market_data",
+    "generate_synthetic_data", "load_csi300", "load_market_data",
     # engine
     "BacktestResult", "FactorBacktestEngine", "FactorMetrics",
     "QuantileBacktestResult", "compute_factor_metrics", "compute_ic_summary",

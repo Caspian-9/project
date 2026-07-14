@@ -14,25 +14,23 @@ import os
 import sys
 from pathlib import Path
 
-from scripts.data import generate_synthetic_data
+from scripts.data import generate_synthetic_data, load_csi300
 from scripts.llm_provider import AnthropicProvider, LLMProvider, MockLLMProvider
 from scripts.loop import QuantHarness
 
 
+_DEFAULT_API_KEY = "sk-6b708eb82c8c4167be5666f475d604cc"
+
 def cmd_repl(args: argparse.Namespace) -> None:
     """启动交互式 REPL。"""
-    data = generate_synthetic_data()
+    data = load_csi300() if not args.synthetic else generate_synthetic_data()
 
     llm: LLMProvider
     if args.mock:
         llm = MockLLMProvider()
         print("[警告] 使用 MockLLMProvider，LLM 不会真正调用 API")
     else:
-        api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY", "")
-        if not api_key:
-            print("错误: 未设置 ANTHROPIC_API_KEY 环境变量，也没有传入 --api-key")
-            print("请设置环境变量或使用 --api-key 参数，或使用 --mock 进入测试模式")
-            sys.exit(1)
+        api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY", "") or _DEFAULT_API_KEY
         llm = AnthropicProvider(
             api_key=api_key,
             model=args.model or "",
@@ -50,12 +48,10 @@ def cmd_repl(args: argparse.Namespace) -> None:
 
 def cmd_run(args: argparse.Namespace) -> None:
     """一次性执行研究工作流。"""
-    data = generate_synthetic_data()
-    api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY", "")
-    llm: LLMProvider = (
-        AnthropicProvider(api_key=api_key, model=args.model or "", base_url=args.base_url or "")
-        if api_key
-        else MockLLMProvider()
+    data = load_csi300() if not args.synthetic else generate_synthetic_data()
+    api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY", "") or _DEFAULT_API_KEY
+    llm: LLMProvider = AnthropicProvider(
+        api_key=api_key, model=args.model or "", base_url=args.base_url or ""
     )
 
     harness = QuantHarness(
@@ -116,6 +112,7 @@ def main() -> None:
     parser.add_argument("--api-key", default=None, help="Anthropic API key")
     parser.add_argument("--base-url", default=None, help="自定义 API 端点/代理地址")
     parser.add_argument("--mock", action="store_true", help="使用 Mock LLM")
+    parser.add_argument("--synthetic", action="store_true", help="使用合成数据（默认: CSI300真实数据）")
 
     sub = parser.add_subparsers(dest="command", help="子命令")
     p_repl = sub.add_parser("repl", help="启动交互式 REPL")

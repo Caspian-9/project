@@ -542,3 +542,85 @@ def create_default_asset_info(n_assets: int, seed: int = 42) -> pd.DataFrame:
         },
         index=asset_names,
     )
+
+def load_csi300(data_dir: str = "data/csi300") -> MarketData:
+    """加载沪深300成分股日线数据，构建MarketData。
+
+    Args:
+        data_dir: CSI300数据目录路径。
+
+    Returns:
+        MarketData实例，含prices/volumes/highs/lows/opens。
+    """
+    import pandas as pd
+    from pathlib import Path
+
+    daily_dir = Path(data_dir) / "daily"
+    if not daily_dir.exists():
+        raise FileNotFoundError(f"CSI300数据目录不存在: {daily_dir}")
+
+    # 读取所有parquet文件
+    frames: dict[str, pd.DataFrame] = {}
+    for f in sorted(daily_dir.glob("*.parquet")):
+        symbol = f.stem  # e.g. 000001.SZSE
+        df = pd.read_parquet(f)
+        df["datetime"] = pd.to_datetime(df["datetime"])
+        df = df.set_index("datetime").sort_index()
+        frames[symbol] = df
+
+    if not frames:
+        raise ValueError("未找到任何parquet文件")
+
+    # 对齐时间轴，构建统一矩阵
+    # 使用价格列构建 (time, asset) 面板
+    all_times = sorted(set().union(*[set(df.index) for df in frames.values()]))
+    assets = sorted(frames.keys())
+
+    prices = pd.DataFrame(index=all_times, columns=assets, dtype=float)
+    volumes = pd.DataFrame(index=all_times, columns=assets, dtype=float)
+    highs = pd.DataFrame(index=all_times, columns=assets, dtype=float)
+    lows = pd.DataFrame(index=all_times, columns=assets, dtype=float)
+    opens = pd.DataFrame(index=all_times, columns=assets, dtype=float)
+
+    for symbol, df in frames.items():
+        prices.loc[df.index, symbol] = df["close"]
+        volumes.loc[df.index, symbol] = df["volume"]
+        if "high" in df.columns:
+            highs.loc[df.index, symbol] = df["high"]
+        if "low" in df.columns:
+            lows.loc[df.index, symbol] = df["low"]
+        if "open" in df.columns:
+            opens.loc[df.index, symbol] = df["open"]
+
+    # Forward fill missing values (停牌日)
+    prices = prices.ffill()
+    volumes = volumes.fillna(0.0)
+
+    # 过滤：保留至少有100只股票有数据的日期
+    min_assets = max(50, len(assets) // 6)
+    valid_times = prices.notna().sum(axis=1) >= min_assets
+    prices = prices.loc[valid_times]
+    volumes = volumes.loc[valid_times]
+    highs = highs.loc[valid_times]
+    lows = lows.loc[valid_times]
+    opens = opens.loc[valid_times]
+
+    # 过滤：去除前20%时间段（IPO少，数据质量差）
+    start_idx = len(prices) // 5
+    prices = prices.iloc[start_idx:]
+    volumes = volumes.iloc[start_idx:]
+    highs = highs.iloc[start_idx:]
+    lows = lows.iloc[start_idx:]
+    opens = opens.iloc[start_idx:]
+
+    print(f"CSI300: {len(assets)}只股票, {len(prices)}个交易日, {prices.index[0].date()}~{prices.index[-1].date()}")
+
+    return MarketData(
+        prices=prices,
+        volumes=volumes,
+        highs=highs,
+        lows=lows,
+        opens=opens,
+        freq=Freq.DAILY,
+    )
+

@@ -98,11 +98,15 @@ class AnthropicProvider(LLMProvider):
                 "或传入 api_key 参数。"
             )
 
-        # 解析 model: 参数 > 环境变量 > 默认值
-        resolved_model = model or os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
+        # 解析 model: 参数 > 环境变量 > 默认值 (DeepSeek)
+        resolved_model = model or os.environ.get("ANTHROPIC_MODEL", "deepseek-v4-pro[1m]")
 
-        # 解析 base_url: 参数 > 环境变量
-        resolved_base_url = base_url or os.environ.get("ANTHROPIC_BASE_URL", "")
+        # 解析 base_url: 参数 > 环境变量 > DeepSeek Anthropic 兼容端点
+        resolved_base_url = (
+            base_url
+            or os.environ.get("ANTHROPIC_BASE_URL", "")
+            or "https://api.deepseek.com/anthropic"
+        )
 
         client_kwargs: dict[str, Any] = {
             "api_key": resolved_key,
