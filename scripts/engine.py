@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Literal, Optional
 
 import numpy as np
@@ -16,9 +17,17 @@ from scripts.data import MarketData
 
 @dataclass
 class BacktestConfig:
-    """因子回测全参数配置 — 一个 dataclass 封装所有可调参数。
+    """因子回测全参数配置 — 对齐国信证券多因子回溯测试框架。
 
-    每个因子回测时只需传入一个 BacktestConfig 实例。
+    标准化方法 (4种):
+      plain     — 普通 z-score
+      market_cap — 市值加权 z-score (均值用市值加权)
+      random    — 随机数标准化 (保留分布形状)
+      style     — 风格标准化 (行业内z-score, 消除行业影响)
+
+    分位数方法 (2种):
+      plain     — 全市场统一分位
+      style     — 风格内分位 → 汇总 (保证每组风格均匀)
     """
 
     # === 分组参数 ===
@@ -26,26 +35,38 @@ class BacktestConfig:
     weighting: Literal["equal", "market_cap", "style_neutral"] = "equal"
     holding_periods: int = 1  # 持仓周期 (1=下一期, 5=下周, 20=下月)
 
-    # === 因子预处理 ===
-    transform: str = "zscore"  # zscore | rank | winsorize | raw
-    clean_outliers: bool = True  # MAD 异常值清洗
+    # === 因子标准化 (对齐国信论文 4 种) ===
+    standardize: Literal["plain", "market_cap", "random", "style"] = "plain"
+
+    # === 分位数方法 (对齐国信论文 2 种) ===
+    quantile_method: Literal["plain", "style"] = "plain"
+
+    # === 数据清洗 ===
+    transform: str = "zscore"  # 因子截面变换: zscore | rank | winsorize | raw
+    clean_outliers: bool = True
     clean_method: str = "mad"  # mad | 3sigma | percentile
-    industry_neutralize: bool = False  # 行业标准化
-    industry_quantile: bool = False  # 行业内分位 (vs 全市场分位)
 
     # === 分析参数 ===
     periods_per_year: int = 252
+
+    @property
+    def use_industry_standardize(self) -> bool:
+        return self.standardize == "style"
+
+    @property
+    def use_industry_quantile(self) -> bool:
+        return self.quantile_method == "style"
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "n_quantiles": self.n_quantiles,
             "weighting": self.weighting,
             "holding_periods": self.holding_periods,
+            "standardize": self.standardize,
+            "quantile_method": self.quantile_method,
             "transform": self.transform,
             "clean_outliers": self.clean_outliers,
             "clean_method": self.clean_method,
-            "industry_neutralize": self.industry_neutralize,
-            "industry_quantile": self.industry_quantile,
             "periods_per_year": self.periods_per_year,
         }
 
@@ -53,33 +74,31 @@ class BacktestConfig:
 # ── 标准预设 ──
 
 PRESETS: dict[str, BacktestConfig] = {
-    "default": BacktestConfig(
-        # 国信证券默认: 5分位, 等权, 持有1期, zscore
-    ),
+    "default": BacktestConfig(),
     "guoxin_standard": BacktestConfig(
         n_quantiles=5, weighting="equal", holding_periods=1,
+        standardize="plain", quantile_method="plain",
         transform="zscore", clean_outliers=True, clean_method="mad",
-        industry_neutralize=False, industry_quantile=False,
     ),
     "industry_neutral": BacktestConfig(
         n_quantiles=5, weighting="market_cap", holding_periods=1,
+        standardize="style", quantile_method="style",
         transform="zscore", clean_outliers=True, clean_method="mad",
-        industry_neutralize=True, industry_quantile=True,
     ),
     "rank_robust": BacktestConfig(
         n_quantiles=5, weighting="equal", holding_periods=1,
+        standardize="style", quantile_method="plain",
         transform="rank", clean_outliers=True, clean_method="mad",
-        industry_neutralize=True, industry_quantile=False,
     ),
     "monthly_rebalance": BacktestConfig(
         n_quantiles=5, weighting="market_cap", holding_periods=20,
+        standardize="style", quantile_method="style",
         transform="zscore", clean_outliers=True, clean_method="mad",
-        industry_neutralize=True, industry_quantile=True,
     ),
     "long_term": BacktestConfig(
         n_quantiles=5, weighting="market_cap", holding_periods=60,
+        standardize="style", quantile_method="style",
         transform="zscore", clean_outliers=True, clean_method="mad",
-        industry_neutralize=True, industry_quantile=True,
     ),
 }
 
@@ -281,7 +300,7 @@ class FactorBacktestEngine:
         """计算分层组合收益。
 
         支持:
-          - 普通分位 / 行业内分位 (config.industry_quantile)
+          - 普通分位 / 行业内分位 (config.use_industry_quantile)
           - 等权 / 市值加权 / 风格中性 (config.weighting)
 
         Args:
@@ -296,7 +315,7 @@ class FactorBacktestEngine:
         quantile_returns_list: list[pd.Series] = []
 
         use_industry_q = (
-            self.config.industry_quantile
+            self.config.use_industry_quantile
             and asset_info is not None
             and "sector" in asset_info.columns
         )
@@ -526,6 +545,138 @@ def save_backtest_results(
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
     return p
+
+
+def compute_quantile_summary_table(
+    result: BacktestResult,
+    benchmark_returns: Optional[pd.Series] = None,
+    periods_per_year: int = 252,
+) -> dict[str, dict[int, float]]:
+    """国信论文概述表 — 每个分位组的完整统计指标。
+
+    对齐国信证券多因子回溯测试报告 §2 概述部分，
+    为每个分位组计算 16+ 个绩效指标。
+
+    Args:
+        result: 回测结果。
+        benchmark_returns: (time,) 基准收益序列 (用于 Alpha/Beta/IR)。
+        periods_per_year: 年化周期数。
+
+    Returns:
+        {metric_name: {quantile: value}}，指标名对齐论文:
+          average_return, cumulative_return, annualized_return,
+          annualized_std, annualized_sharpe, alpha, beta, beta_plus, beta_minus,
+          annualized_alpha, tracking_error, active_premium, information_ratio,
+          up_capture, down_capture, up_number, down_number, up_percent,
+          down_percent, hit_ratio, worst_drawdown
+    """
+    q_rets = result.quantile.quantile_returns
+    q_cum = result.quantile.quantile_cumulative
+    summary: dict[str, dict[int, float]] = {}
+
+    for col in sorted(q_rets.columns):
+        q = int(col)
+        r = q_rets[col].dropna()
+        n = len(r)
+
+        # 基本统计
+        avg = float(r.mean())
+        cumulative = float(q_cum[col].iloc[-1] - 1) if col in q_cum.columns else 0.0
+        ann_ret = float(avg * periods_per_year)
+        ann_std = float(r.std() * np.sqrt(periods_per_year))
+        ann_sharpe = ann_ret / ann_std if ann_std > 0 else 0.0
+        maxdd = float(((1 + r).cumprod() / (1 + r).cumprod().cummax() - 1).min())
+
+        # 相对基准指标
+        alpha_val, beta_val, beta_p, beta_m = 0.0, 0.0, 0.0, 0.0
+        ann_alpha, tracking_err, active_prem, ir = 0.0, 0.0, 0.0, 0.0
+        up_cap, down_cap = 0.0, 0.0
+        up_num, down_num = 0.0, 0.0
+        up_pct, down_pct = 0.0, 0.0
+        hit = 0.0
+
+        if benchmark_returns is not None:
+            common = r.index.intersection(benchmark_returns.index)
+            if len(common) > 20:
+                r_aligned = r[common]
+                b_aligned = benchmark_returns[common]
+
+                # Beta (simple linear regression)
+                cov = np.cov(r_aligned.values, b_aligned.values)
+                if cov.shape == (2, 2):
+                    beta_val = float(cov[0, 1] / cov[1, 1]) if cov[1, 1] > 0 else 0.0
+
+                # Alpha (CAPM)
+                excess_r = r_aligned.mean() - 0.0  # rf=0
+                excess_b = b_aligned.mean()
+                alpha_val = float(excess_r - beta_val * excess_b)
+
+                # Beta+ / Beta-
+                pos_mask = b_aligned > 0
+                neg_mask = b_aligned < 0
+                if pos_mask.sum() > 5:
+                    beta_p = float(np.cov(r_aligned[pos_mask].values, b_aligned[pos_mask].values)[0, 1] / np.var(b_aligned[pos_mask].values)) if np.var(b_aligned[pos_mask].values) > 0 else 0.0
+                if neg_mask.sum() > 5:
+                    beta_m = float(np.cov(r_aligned[neg_mask].values, b_aligned[neg_mask].values)[0, 1] / np.var(b_aligned[neg_mask].values)) if np.var(b_aligned[neg_mask].values) > 0 else 0.0
+
+                # Tracking Error
+                tracking_diff = r_aligned - b_aligned
+                tracking_err = float(tracking_diff.std() * np.sqrt(periods_per_year))
+
+                # Annualized Alpha
+                ann_alpha = float(alpha_val * periods_per_year)
+
+                # Active Premium
+                active_prem = float(ann_ret - b_aligned.mean() * periods_per_year)
+
+                # Information Ratio
+                ir = active_prem / tracking_err if tracking_err > 0 else 0.0
+
+                # Up/Down Capture
+                up_mask = b_aligned > 0
+                down_mask = b_aligned < 0
+                if up_mask.sum() > 0:
+                    up_cap = float(r_aligned[up_mask].mean() / b_aligned[up_mask].mean()) if b_aligned[up_mask].mean() != 0 else 1.0
+                if down_mask.sum() > 0:
+                    down_cap = float(r_aligned[down_mask].mean() / b_aligned[down_mask].mean()) if b_aligned[down_mask].mean() != 0 else 1.0
+
+                # Up/Down Number
+                up_num = float(up_mask.sum() / n)
+                down_num = float(down_mask.sum() / n)
+
+                # Up/Down Percent
+                up_pct = float((r_aligned > 0).mean())
+                down_pct = float((r_aligned < 0).mean())
+
+                # Hit Ratio
+                hit = float(((r_aligned > 0) == (b_aligned > 0)).mean())
+
+        for metric, val in [
+            ("average_return", avg),
+            ("cumulative_return", cumulative),
+            ("annualized_return", ann_ret),
+            ("annualized_std", ann_std),
+            ("annualized_sharpe", ann_sharpe),
+            ("alpha", alpha_val),
+            ("beta", beta_val),
+            ("beta_plus", beta_p),
+            ("beta_minus", beta_m),
+            ("annualized_alpha", ann_alpha),
+            ("tracking_error", tracking_err),
+            ("active_premium", active_prem),
+            ("information_ratio", ir),
+            ("up_capture", up_cap),
+            ("down_capture", down_cap),
+            ("up_number", up_num),
+            ("down_number", down_num),
+            ("up_percent", up_pct),
+            ("down_percent", down_pct),
+            ("hit_ratio", hit),
+            ("worst_drawdown", maxdd),
+        ]:
+            summary.setdefault(metric, {})[q] = val
+
+    return summary
 
 
 class QuantileSummary(TypedDict):

@@ -16,11 +16,11 @@ created: 2026-07-16
 | `n_quantiles` | int (2-10) | 5 | 分位数。5=每组20%，2=top/bottom对半 |
 | `weighting` | str | equal | 组合加权: equal/ market_cap/ style_neutral |
 | `holding_periods` | int | 1 | 持仓周期(交易日): 1=日频, 5=周频, 20=月频, 60=季频 |
+| `standardize` | str | plain | 标准化方法: plain(普通zscore)/ market_cap(市值加权)/ random(随机数)/ style(风格标准化) |
+| `quantile_method` | str | plain | 分位数方法: plain(全市场统一)/ style(风格内分位→汇总) |
 | `transform` | str | zscore | 截面变换: zscore/ rank/ winsorize/ raw |
 | `clean_outliers` | bool | True | 是否 MAD 异常值清洗 |
 | `clean_method` | str | mad | 清洗方法: mad/ 3sigma/ percentile |
-| `industry_neutralize` | bool | False | 行业标准化 (每个行业内做 zscore) |
-| `industry_quantile` | bool | False | 行业内分位 (每个行业内独立分位后汇总) |
 
 ## 标准预设
 

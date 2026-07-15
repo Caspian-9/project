@@ -177,16 +177,46 @@ SELECT ──→ GENERATE_BACKTEST ──→ ROBUSTNESS ──→ ANALYZE
 2. 深读报告原文，提取：因子计算方式、参数、数据来源、经济逻辑、潜在局限
 3. 产出：`original_factor_def` + `economic_rationale` + `variant_ideas`
 
-### 5.3 Phase GENERATE_BACKTEST: 生成变体 + 回测
+### 5.3 回测参数选择（LLM 判断，非 default）
 
-1. `VariantGenerator.generate()` 从原始定义生成 20 个变体
+在 Phase SELECT 提取因子定义后，LLM **必须**根据以下知识主动选择 `BacktestConfig` 参数，**禁止无脑用 default**：
+
+| 参数 | 判断依据（查询 wiki） | 参考页面 |
+|------|----------------------|----------|
+| `standardize` | 因子是否需要行业中性？成长/质量因子→style，动量因子→plain | [[concepts/backtest-params]] |
+| `quantile_method` | 是否需要行业内分位？行业暴露显著的因子→style | [[concepts/backtest-params]] |
+| `weighting` | 等权 or 市值加权？大市值主导的因子→market_cap | [[concepts/backtest-params]] |
+| `holding_periods` | 因子信号的衰减速度？IC衰变快速的因子→短持仓 | [[concepts/ic-analysis]] |
+| `transform` | 因子值分布有极端值？→rank 或 winsorize | [[concepts/backtest-params]] |
+
+**LLM 在每个因子回测前必须**：
+1. 查询 `wiki/concepts/backtest-params.md` 了解全部参数含义
+2. 根据因子的经济属性和历史实证（wiki 中同类因子的回测记录）决定参数
+3. 在回测报告中记录选择理由（为什么选这组参数）
+
+**可用的标准预设**（也可微调）：
+```python
+from scripts.engine import PRESETS
+PRESETS["guoxin_standard"]    # 等权/普通分位/普通zscore
+PRESETS["industry_neutral"]   # 市值加权/行业分位/行业标准化
+PRESETS["rank_robust"]        # 等权/Rank变换/行业标准化
+PRESETS["monthly_rebalance"]  # 月频调仓/行业中性全开
+PRESETS["long_term"]          # 季频调仓/行业中性全开
+```
+
+### 5.4 Phase GENERATE_BACKTEST: 生成变体 + 回测
+
+1. LLM 选定回测参数 → `BacktestConfig(...)` 或 `PRESETS["xxx"]`
+2. `VariantGenerator.generate()` 从原始定义生成 20 个变体
    - `param_tweak`: 窗口缩放 ×0.25~×3.0
    - `window_change`: 短期/中期/长期多尺度
    - `new_variable`: 引入成交量/高低价等新变量
    - `transform`: ZSCORE → RANK / WINSORIZE
-2. `ToolExecutor.execute("run_backtest", ...)` 逐个回测
-3. `sweep_params` 对最佳候选做参数扫描
-4. 汇总：按 IC_IR 降序排列
+3. `FactorBacktestEngine(config).run(data, factor_values, name)` 逐个回测
+4. `compute_quantile_summary_table()` 输出完整概述表 (16+指标×5分位)
+5. `save_backtest_results()` 保存 JSON (含 _config 头)
+6. `generate_html_report()` 生成含 11 张图表的交互式 HTML 报告
+7. 汇总：按 IC_IR 降序排列
 
 ### 5.4 Phase ROBUSTNESS: 稳健性验证
 

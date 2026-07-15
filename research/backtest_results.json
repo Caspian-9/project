@@ -1,0 +1,33 @@
+{
+  "_config": {
+    "n_quantiles": 5,
+    "weighting": "market_cap",
+    "holding_periods": 1,
+    "transform": "zscore",
+    "clean_outliers": true,
+    "clean_method": "mad",
+    "industry_neutralize": true,
+    "industry_quantile": true,
+    "periods_per_year": 252
+  },
+  "_meta": {
+    "generated_at": "2026-07-16T04:29:30.081056",
+    "n_factors": 2,
+    "factor_source": "",
+    "notes": "行业中性化测试"
+  },
+  "factors": {
+    "momentum_1m": {
+      "ic_ir": -0.123,
+      "ic_mean": -0.024,
+      "sharpe": 0.45,
+      "grade": "D"
+    },
+    "volume_ratio_3m": {
+      "ic_ir": -0.275,
+      "ic_mean": -0.031,
+      "sharpe": 0.52,
+      "grade": "C"
+    }
+  }
+}

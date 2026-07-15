@@ -10,6 +10,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
+import pandas as pd
 import plotly.graph_objects as go
 
 from scripts.analysis import (
@@ -45,6 +46,9 @@ def generate_html_report(
     factor_name: str = "",
     economic_rationale: str = "",
     report_source: str = "",
+    benchmark_returns: "Optional[pd.Series]" = None,
+    asset_info: "Optional[pd.DataFrame]" = None,
+    quantile_summary: Optional[dict[str, dict[int, float]]] = None,
 ) -> str:
     """生成完整的自包含 HTML 因子分析报告。
 
@@ -69,8 +73,11 @@ def generate_html_report(
     chart_ic_dist = _ic_distribution_chart(result)
     chart_quantile_bar = _quantile_bar_chart(result)
     chart_ls = _long_short_chart(result)
-
-    decay_chart = ""
+    chart_top_ret_ts = _top_return_ts_chart(result)
+    chart_top_ret_dist = _top_return_dist_chart(result)
+    chart_drawdown = _drawdown_chart(result)
+    chart_scatter = _market_scatter_chart(result, benchmark_returns)
+    chart_mcap = _avg_mcap_chart(result, asset_info)
     if dynamic and dynamic.ic_decay:
         decay_chart = _ic_decay_chart(dynamic)
 
@@ -220,6 +227,33 @@ th {{ color:{COLORS['text_muted']}; font-weight:600; font-size:0.85rem; }}
   <h2>多空组合净值</h2>
   <div class="chart-container" id="chart-ls"></div>
 </div>
+
+<div class="chart-section">
+  <h2>Top 组绝对收益率时间序列</h2>
+  <div class="chart-container" id="chart-top-ret-ts"></div>
+</div>
+
+<div class="analysis-grid">
+  <div class="chart-section">
+    <h2>Top 组收益率分布</h2>
+    <div class="chart-container" id="chart-top-ret-dist"></div>
+  </div>
+  <div class="chart-section">
+    <h2>Top 组最大回撤</h2>
+    <div class="chart-container" id="chart-drawdown"></div>
+  </div>
+</div>
+
+<div class="analysis-grid">
+  <div class="chart-section">
+    <h2>Top 组 vs 市场收益率</h2>
+    <div class="chart-container" id="chart-scatter"></div>
+  </div>
+  <div class="chart-section">
+    <h2>各分位平均市值</h2>
+    <div class="chart-container" id="chart-mcap"></div>
+  </div>
+</div>
 """
 
     if decay_chart:
@@ -283,6 +317,11 @@ Plotly.newPlot('chart-ic-ts', {chart_ic_ts}, {{}}, config);
 Plotly.newPlot('chart-ic-dist', {chart_ic_dist}, {{}}, config);
 Plotly.newPlot('chart-quantile-bar', {chart_quantile_bar}, {{}}, config);
 Plotly.newPlot('chart-ls', {chart_ls}, {{}}, config);
+Plotly.newPlot('chart-top-ret-ts', {chart_top_ret_ts}, {{}}, config);
+Plotly.newPlot('chart-top-ret-dist', {chart_top_ret_dist}, {{}}, config);
+Plotly.newPlot('chart-drawdown', {chart_drawdown}, {{}}, config);
+Plotly.newPlot('chart-scatter', {chart_scatter}, {{}}, config);
+Plotly.newPlot('chart-mcap', {chart_mcap}, {{}}, config);
 """
     if decay_chart:
         html += f"Plotly.newPlot('chart-ic-decay', {decay_chart}, {{}}, config);\n"
@@ -446,6 +485,115 @@ def _ic_decay_chart(dynamic: DynamicMetrics) -> str:
         xaxis=dict(title="持有期", dtick=1, gridcolor=COLORS["border"]),
         yaxis=dict(title="IC 均值", gridcolor=COLORS["border"]),
     )
+    return fig.to_json()
+
+
+def _top_return_ts_chart(result: BacktestResult) -> str:
+    """Top 组绝对收益率时间序列图。"""
+    q_df = result.quantile.quantile_returns
+    top_col = sorted(q_df.columns)[-1]
+    r = q_df[top_col].dropna()
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=r.index, y=r.values, mode="lines",
+        line=dict(color=COLORS["quantile"][-1], width=0.8),
+        name=f"Q{int(top_col)}",
+    ))
+    fig.add_hline(y=0, line_dash="dash", line_color=COLORS["text_muted"], opacity=0.3)
+    fig.update_layout(template="plotly_dark", paper_bgcolor=COLORS["bg"], plot_bgcolor=COLORS["bg"],
+        font=dict(color=COLORS["text"]), margin=dict(l=40,r=20,t=10,b=40),
+        xaxis=dict(title="", gridcolor=COLORS["border"]),
+        yaxis=dict(title="收益率", gridcolor=COLORS["border"]))
+    return fig.to_json()
+
+def _top_return_dist_chart(result: BacktestResult) -> str:
+    """Top 组收益率样本分布图。"""
+    q_df = result.quantile.quantile_returns
+    top_col = sorted(q_df.columns)[-1]
+    r = q_df[top_col].dropna()
+    fig = go.Figure()
+    fig.add_trace(go.Histogram(x=r.values, nbinsx=50,
+        marker=dict(color=COLORS["quantile"][-1], line=dict(color=COLORS["border"],width=1))))
+    fig.add_vline(x=r.mean(), line_dash="dot", line_color=COLORS["green"],
+                  annotation_text=f"μ={r.mean():.4f}")
+    fig.update_layout(template="plotly_dark", paper_bgcolor=COLORS["bg"], plot_bgcolor=COLORS["bg"],
+        font=dict(color=COLORS["text"]), margin=dict(l=40,r=20,t=10,b=40),
+        xaxis=dict(title="收益率", gridcolor=COLORS["border"]),
+        yaxis=dict(title="频次", gridcolor=COLORS["border"]))
+    return fig.to_json()
+
+def _drawdown_chart(result: BacktestResult) -> str:
+    """Top 组最大回撤图。"""
+    q_df = result.quantile.quantile_returns
+    top_col = sorted(q_df.columns)[-1]
+    r = q_df[top_col].dropna()
+    cum = (1 + r).cumprod()
+    dd = (cum / cum.cummax() - 1)
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=dd.index, y=dd.values, mode="lines",
+        line=dict(color=COLORS["red"], width=1),
+        fill="tozeroy", fillcolor="rgba(248,113,113,0.15)",
+    ))
+    fig.update_layout(template="plotly_dark", paper_bgcolor=COLORS["bg"], plot_bgcolor=COLORS["bg"],
+        font=dict(color=COLORS["text"]), margin=dict(l=40,r=20,t=10,b=40),
+        xaxis=dict(title="", gridcolor=COLORS["border"]),
+        yaxis=dict(title="回撤", tickformat=".0%", gridcolor=COLORS["border"]))
+    return fig.to_json()
+
+def _market_scatter_chart(result: BacktestResult, benchmark_returns: Optional[pd.Series]) -> str:
+    """Top 组收益率 vs 市场收益率散点图。"""
+    q_df = result.quantile.quantile_returns
+    top_col = sorted(q_df.columns)[-1]
+    r = q_df[top_col].dropna()
+    if benchmark_returns is None:
+        return "{}"
+    common = r.index.intersection(benchmark_returns.index)
+    x_vals = benchmark_returns[common].values
+    y_vals = r[common].values
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=x_vals, y=y_vals, mode="markers",
+        marker=dict(color=COLORS["accent"], size=5, opacity=0.5)))
+    # regression line
+    if len(x_vals) > 2:
+        from numpy import polyfit
+        m, b = polyfit(x_vals, y_vals, 1)
+        line_x = [min(x_vals), max(x_vals)]
+        fig.add_trace(go.Scatter(x=line_x, y=[m*v+b for v in line_x],
+            mode="lines", line=dict(color=COLORS["green"], width=1.5, dash="dash"), name=f"β={m:.2f}"))
+    fig.update_layout(template="plotly_dark", paper_bgcolor=COLORS["bg"], plot_bgcolor=COLORS["bg"],
+        font=dict(color=COLORS["text"]), margin=dict(l=40,r=20,t=10,b=40),
+        xaxis=dict(title="市场收益率", gridcolor=COLORS["border"]),
+        yaxis=dict(title="Top组收益率", gridcolor=COLORS["border"]), showlegend=False)
+    return fig.to_json()
+
+def _avg_mcap_chart(result: BacktestResult, asset_info: Optional[pd.DataFrame]) -> str:
+    """各分位平均市值图。"""
+    if asset_info is None or "market_cap" not in asset_info.columns:
+        return "{}"
+    fv = result.factor_values
+    mcap = asset_info["market_cap"]
+    avg_mcaps: dict[int, list[float]] = {}
+    for t_idx in range(0, len(fv.index), 60):  # every 60 days sample
+        try:
+            cross = fv.iloc[t_idx].dropna()
+            labels = pd.qcut(cross, 5, labels=False, duplicates="drop")
+            common = labels.index.intersection(mcap.index)
+            for q in range(5):
+                q_assets = labels[labels==q].index.intersection(common)
+                if len(q_assets) > 0:
+                    avg_mcaps.setdefault(q, []).append(float(mcap[q_assets].mean()))
+        except Exception:
+            pass
+    if not avg_mcaps:
+        return "{}"
+    fig = go.Figure()
+    for q in sorted(avg_mcaps.keys()):
+        fig.add_trace(go.Box(y=avg_mcaps[q], name=f"Q{q}",
+            marker=dict(color=COLORS["quantile"][q])))
+    fig.update_layout(template="plotly_dark", paper_bgcolor=COLORS["bg"], plot_bgcolor=COLORS["bg"],
+        font=dict(color=COLORS["text"]), margin=dict(l=40,r=20,t=10,b=40),
+        yaxis=dict(title="平均市值", gridcolor=COLORS["border"]))
     return fig.to_json()
 
 
