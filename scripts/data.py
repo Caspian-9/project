@@ -613,6 +613,33 @@ def load_csi300(data_dir: str = "data/csi300") -> MarketData:
     lows = lows.iloc[start_idx:]
     opens = opens.iloc[start_idx:]
 
+    # 加载辅助数据：行业分类 + 市值
+    import pandas as pd
+
+    asset_info = pd.DataFrame(index=assets)
+    asset_info.index.name = "asset"
+
+    industry_path = Path(data_dir) / "industry.parquet"
+    if industry_path.exists():
+        ind_df = pd.read_parquet(industry_path)
+        ind_map = ind_df.set_index("stock_code")["industry"]
+        common = asset_info.index.intersection(ind_map.index)
+        asset_info.loc[common, "sector"] = ind_map.loc[common]
+        print(f"  行业分类: {asset_info['sector'].nunique()} 个行业, {asset_info['sector'].notna().sum()} 只股票有行业数据")
+
+    market_cap_path = Path(data_dir) / "market_cap.parquet"
+    if market_cap_path.exists():
+        mc_df = pd.read_parquet(market_cap_path)
+        # stock_code format fix: '000001' → match with '000001.SZSE' or '000001.SSE'
+        mc_df["code_short"] = mc_df["stock_code"].astype(str).str[:6]
+        asset_short = pd.Series(asset_info.index.str[:6], index=asset_info.index)
+        mc_map = mc_df.set_index("code_short")["weight_pct"]
+        for asset in asset_info.index:
+            short = str(asset)[:6]
+            if short in mc_map.index:
+                asset_info.loc[asset, "market_cap"] = float(mc_map[short])
+        print(f"  市值数据: {asset_info['market_cap'].notna().sum()} 只股票有市值数据")
+
     print(f"CSI300: {len(assets)}只股票, {len(prices)}个交易日, {prices.index[0].date()}~{prices.index[-1].date()}")
 
     return MarketData(
@@ -622,5 +649,6 @@ def load_csi300(data_dir: str = "data/csi300") -> MarketData:
         lows=lows,
         opens=opens,
         freq=Freq.DAILY,
+        asset_info=asset_info if (asset_info.notna().any().any()) else None,
     )
 
