@@ -11,6 +11,79 @@ import pandas as pd
 from scripts.data import MarketData
 
 
+# ── 回测参数配置 ──
+
+
+@dataclass
+class BacktestConfig:
+    """因子回测全参数配置 — 一个 dataclass 封装所有可调参数。
+
+    每个因子回测时只需传入一个 BacktestConfig 实例。
+    """
+
+    # === 分组参数 ===
+    n_quantiles: int = 5  # 分位数 (2~10)
+    weighting: Literal["equal", "market_cap", "style_neutral"] = "equal"
+    holding_periods: int = 1  # 持仓周期 (1=下一期, 5=下周, 20=下月)
+
+    # === 因子预处理 ===
+    transform: str = "zscore"  # zscore | rank | winsorize | raw
+    clean_outliers: bool = True  # MAD 异常值清洗
+    clean_method: str = "mad"  # mad | 3sigma | percentile
+    industry_neutralize: bool = False  # 行业标准化
+    industry_quantile: bool = False  # 行业内分位 (vs 全市场分位)
+
+    # === 分析参数 ===
+    periods_per_year: int = 252
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "n_quantiles": self.n_quantiles,
+            "weighting": self.weighting,
+            "holding_periods": self.holding_periods,
+            "transform": self.transform,
+            "clean_outliers": self.clean_outliers,
+            "clean_method": self.clean_method,
+            "industry_neutralize": self.industry_neutralize,
+            "industry_quantile": self.industry_quantile,
+            "periods_per_year": self.periods_per_year,
+        }
+
+
+# ── 标准预设 ──
+
+PRESETS: dict[str, BacktestConfig] = {
+    "default": BacktestConfig(
+        # 国信证券默认: 5分位, 等权, 持有1期, zscore
+    ),
+    "guoxin_standard": BacktestConfig(
+        n_quantiles=5, weighting="equal", holding_periods=1,
+        transform="zscore", clean_outliers=True, clean_method="mad",
+        industry_neutralize=False, industry_quantile=False,
+    ),
+    "industry_neutral": BacktestConfig(
+        n_quantiles=5, weighting="market_cap", holding_periods=1,
+        transform="zscore", clean_outliers=True, clean_method="mad",
+        industry_neutralize=True, industry_quantile=True,
+    ),
+    "rank_robust": BacktestConfig(
+        n_quantiles=5, weighting="equal", holding_periods=1,
+        transform="rank", clean_outliers=True, clean_method="mad",
+        industry_neutralize=True, industry_quantile=False,
+    ),
+    "monthly_rebalance": BacktestConfig(
+        n_quantiles=5, weighting="market_cap", holding_periods=20,
+        transform="zscore", clean_outliers=True, clean_method="mad",
+        industry_neutralize=True, industry_quantile=True,
+    ),
+    "long_term": BacktestConfig(
+        n_quantiles=5, weighting="market_cap", holding_periods=60,
+        transform="zscore", clean_outliers=True, clean_method="mad",
+        industry_neutralize=True, industry_quantile=True,
+    ),
+}
+
+
 @dataclass
 class QuantileBacktestResult:
     """分层回测结果 — 每个分位组合的时间序列表现。"""
@@ -57,28 +130,18 @@ class FactorBacktestEngine:
     所有计算在数据矩阵上一次完成，无逐行循环。
     """
 
-    def __init__(
-        self,
-        n_quantiles: int = 5,
-        weighting: Literal["equal", "value"] = "equal",
-        holding_periods: int = 1,
-    ) -> None:
+    def __init__(self, config: Optional[BacktestConfig] = None) -> None:
         """初始化回测引擎。
 
         Args:
-            n_quantiles: 分位数（默认 5 组）。
-            weighting: 组合加权方式，equal 或 value（市值）。
-            holding_periods: 持仓周期数（1 = 下一期）。
-
-        注意: 如需数据清洗或风格中性化，请在传入 engine 之前
-        使用 DataPipeline 和 StyleNeutralizer 预处理因子值。
-        这样可以保持 engine 的纯粹性——它只负责：因子值 → 收益计算。
+            config: 回测参数配置。默认使用 PRESETS['default']。
         """
-        if n_quantiles < 2:
+        self.config = config or PRESETS["default"]
+        self.n_quantiles = self.config.n_quantiles
+        self.weighting = self.config.weighting
+        self.holding_periods = self.config.holding_periods
+        if self.n_quantiles < 2:
             raise ValueError("n_quantiles 至少为 2")
-        self.n_quantiles = n_quantiles
-        self.weighting = weighting
-        self.holding_periods = holding_periods
 
     @staticmethod
     def compute_full_report(
@@ -118,7 +181,7 @@ class FactorBacktestEngine:
         )
 
         # 静态分析
-        engine = FactorBacktestEngine(n_quantiles=n_quantiles)
+        engine = FactorBacktestEngine(BacktestConfig(n_quantiles=n_quantiles))
         result = engine.run(
             MarketData(prices=prices, volumes=volumes),
             factor_values,
@@ -183,8 +246,9 @@ class FactorBacktestEngine:
         returns_aligned = data.returns.loc[common_times, common_assets]
 
         # 计算分层收益
+        asset_info = data.asset_info
         quantile_result = self._compute_quantile_returns(
-            factor_aligned, returns_aligned
+            factor_aligned, returns_aligned, asset_info
         )
 
         # 计算 IC 序列
@@ -205,23 +269,25 @@ class FactorBacktestEngine:
             ic_ir=float(ic_series.mean() / ic_series.std()) if ic_series.std() > 0 else 0.0,
             long_short_sharpe=long_short_sharpe,
             long_short_maxdd=long_short_maxdd,
-            config={
-                "n_quantiles": self.n_quantiles,
-                "weighting": self.weighting,
-                "holding_periods": self.holding_periods,
-            },
+            config=self.config.to_dict(),
         )
 
     def _compute_quantile_returns(
         self,
         factor: pd.DataFrame,
         returns: pd.DataFrame,
+        asset_info: Optional[pd.DataFrame] = None,
     ) -> QuantileBacktestResult:
-        """计算分层组合收益 — 全向量化。
+        """计算分层组合收益。
+
+        支持:
+          - 普通分位 / 行业内分位 (config.industry_quantile)
+          - 等权 / 市值加权 / 风格中性 (config.weighting)
 
         Args:
             factor: (time, asset) 因子值。
             returns: (time, asset) 下期收益。
+            asset_info: (asset, [sector, market_cap]) 辅助信息。
 
         Returns:
             QuantileBacktestResult。
@@ -229,20 +295,37 @@ class FactorBacktestEngine:
         n_times = len(factor.index)
         quantile_returns_list: list[pd.Series] = []
 
+        use_industry_q = (
+            self.config.industry_quantile
+            and asset_info is not None
+            and "sector" in asset_info.columns
+        )
+        use_mcap_w = (
+            self.config.weighting in ("market_cap", "style_neutral")
+            and asset_info is not None
+            and "market_cap" in asset_info.columns
+        )
+
         for t_idx in range(n_times - self.holding_periods):
             t = factor.index[t_idx]
             t_next = returns.index[t_idx + self.holding_periods]
 
-            # 当前截面因子值
             cross_section = factor.loc[t].dropna()
             if len(cross_section) < self.n_quantiles * 3:
                 continue
 
-            # 分位分组标签 (0 = bottom, n_quantiles-1 = top)
-            quantile_labels = pd.qcut(
-                cross_section, self.n_quantiles, labels=False, duplicates="drop"
-            )
-            if quantile_labels.nunique() < self.n_quantiles:
+            # 分位分组
+            if use_industry_q:
+                # 行业内分位 → 保证每组行业均匀
+                quantile_labels = self._industry_quantile_labels(
+                    cross_section, asset_info
+                )
+            else:
+                quantile_labels = pd.qcut(
+                    cross_section, self.n_quantiles, labels=False, duplicates="drop"
+                )
+
+            if quantile_labels is None or quantile_labels.nunique() < self.n_quantiles:
                 continue
 
             # 下期收益
@@ -251,8 +334,15 @@ class FactorBacktestEngine:
             if len(common) < self.n_quantiles * 3:
                 continue
 
-            # 每组等权收益
-            group_returns = next_returns[common].groupby(quantile_labels[common]).mean()
+            # 计算每组加权收益
+            if use_mcap_w and asset_info is not None:
+                mcap = asset_info.loc[common, "market_cap"].fillna(1.0)
+                mcap = mcap / mcap.sum()  # normalize weights
+                # weighted average per group
+                weighted_ret = next_returns[common] * mcap
+                group_returns = weighted_ret.groupby(quantile_labels[common]).sum() / mcap.groupby(quantile_labels[common]).sum()
+            else:
+                group_returns = next_returns[common].groupby(quantile_labels[common]).mean()
             group_returns.name = t_next
             quantile_returns_list.append(group_returns)
 
@@ -276,6 +366,44 @@ class FactorBacktestEngine:
             n_quantiles=self.n_quantiles,
             weighting=self.weighting,
         )
+
+    def _industry_quantile_labels(
+        self,
+        cross_section: pd.Series,
+        asset_info: Optional[pd.DataFrame],
+    ) -> Optional[pd.Series]:
+        """行业内分位数 — 每个行业内部独立分位后汇总。
+
+        保证每个分位组内各行业的股票数量均匀分布。
+
+        Args:
+            cross_section: 截面因子值。
+            asset_info: 资产信息 (含 sector)。
+
+        Returns:
+            分位标签 (0 ~ n_quantiles-1) 或 None。
+        """
+        if asset_info is None or "sector" not in asset_info.columns:
+            return None
+        result = pd.Series(index=cross_section.index, dtype=float)
+        sectors = asset_info.loc[cross_section.index, "sector"].dropna()
+
+        for sector in sectors.unique():
+            s_assets = sectors[sectors == sector].index
+            s_vals = cross_section[s_assets].dropna()
+            if len(s_vals) < self.n_quantiles * 2:
+                continue
+            try:
+                labels = pd.qcut(
+                    s_vals, self.n_quantiles, labels=False, duplicates="drop"
+                )
+                result.loc[labels.index] = labels.values
+            except ValueError:
+                continue
+
+        if result.notna().sum() < self.n_quantiles * 3:
+            return None
+        return result
 
     @staticmethod
     def _compute_rank_ic(

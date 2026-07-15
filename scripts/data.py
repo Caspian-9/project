@@ -632,7 +632,7 @@ def load_csi300(data_dir: str = "data/csi300") -> MarketData:
         mc_df = pd.read_parquet(market_cap_path)
         # stock_code format fix: '000001' → match with '000001.SZSE' or '000001.SSE'
         mc_df["code_short"] = mc_df["stock_code"].astype(str).str[:6]
-        asset_short = pd.Series(asset_info.index.str[:6], index=asset_info.index)
+        # asset_short not used(asset_info.index.str[:6], index=asset_info.index)
         mc_map = mc_df.set_index("code_short")["weight_pct"]
         for asset in asset_info.index:
             short = str(asset)[:6]

@@ -9,7 +9,7 @@ from typing import Any, Callable, Literal, Optional
 import pandas as pd
 
 from scripts.data import MarketData
-from scripts.engine import BacktestResult, FactorBacktestEngine, compute_factor_metrics
+from scripts.engine import BacktestConfig, BacktestResult, FactorBacktestEngine, compute_factor_metrics
 from scripts.factor import (
     FactorDef,
     TransformMethod,
@@ -351,7 +351,7 @@ class ToolExecutor:
         factor_values = build_factor(self.data, factor_def)
         self._factor_cache[factor_name] = factor_values
 
-        engine = FactorBacktestEngine(n_quantiles=n_quantiles)
+        engine = FactorBacktestEngine(BacktestConfig(n_quantiles=n_quantiles))
         result = engine.run(self.data, factor_values, factor_name=factor_name)
         metrics = compute_factor_metrics(result)
         self._result_cache[factor_name] = result
@@ -392,7 +392,7 @@ class ToolExecutor:
                     factor_values = build_factor(self.data, factor_def)
                     self._factor_cache[fname] = factor_values
 
-                    engine = FactorBacktestEngine(n_quantiles=5)
+                    engine = FactorBacktestEngine(BacktestConfig(n_quantiles=5))
                     result = engine.run(self.data, factor_values, factor_name=fname)
                     metrics = compute_factor_metrics(result)
                     self._result_cache[fname] = result

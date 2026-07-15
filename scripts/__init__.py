@@ -27,9 +27,11 @@ from scripts.data import (
     load_market_data,
 )
 from scripts.engine import (
+    BacktestConfig,
     BacktestResult,
     FactorBacktestEngine,
     FactorMetrics,
+    PRESETS,
     QuantileBacktestResult,
     compute_factor_metrics,
     compute_ic_summary,
@@ -108,7 +110,7 @@ __all__ = [
     "PipelineConfig", "compute_trend_growth", "create_default_asset_info",
     "generate_synthetic_data", "load_csi300", "load_market_data",
     # engine
-    "BacktestResult", "FactorBacktestEngine", "FactorMetrics",
+    "BacktestConfig", "PRESETS", "BacktestResult", "FactorBacktestEngine", "FactorMetrics",
     "QuantileBacktestResult", "compute_factor_metrics", "compute_ic_summary",
     "compute_quantile_returns",
     # factor
