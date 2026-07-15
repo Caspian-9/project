@@ -27,6 +27,7 @@ from scripts.data import (
     load_market_data,
 )
 from scripts.engine import (
+    save_backtest_results,
     BacktestConfig,
     BacktestResult,
     FactorBacktestEngine,
@@ -111,7 +112,8 @@ __all__ = [
     "generate_synthetic_data", "load_csi300", "load_market_data",
     # engine
     "BacktestConfig", "PRESETS", "BacktestResult", "FactorBacktestEngine", "FactorMetrics",
-    "QuantileBacktestResult", "compute_factor_metrics", "compute_ic_summary",
+    "QuantileBacktestResult",
+    "save_backtest_results", "compute_factor_metrics", "compute_ic_summary",
     "compute_quantile_returns",
     # factor
     "CompositeFactor", "FactorDef", "FactorTransform", "NeutralizerConfig",

@@ -489,6 +489,45 @@ from typing import TypedDict
 
 
 
+def save_backtest_results(
+    results: dict[str, dict[str, Any]],
+    config: BacktestConfig,
+    output_path: str = "research/backtest_results.json",
+    factor_source: str = "",
+    notes: str = "",
+) -> Path:
+    """保存回测结果 JSON，开头包含回测参数配置。
+
+    Args:
+        results: {factor_name: {ic_ir, ic_mean, sharpe, ...}} 因子结果字典。
+        config: 回测参数配置。
+        output_path: 输出文件路径。
+        factor_source: 因子来源说明 (如报告ID)。
+        notes: 备注。
+
+    Returns:
+        保存的文件路径。
+    """
+    import json
+    from datetime import datetime
+    from pathlib import Path
+
+    output: dict[str, Any] = {
+        "_config": config.to_dict(),
+        "_meta": {
+            "generated_at": datetime.now().isoformat(),
+            "n_factors": len(results),
+            "factor_source": factor_source,
+            "notes": notes,
+        },
+        "factors": results,
+    }
+    p = Path(output_path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
+    return p
+
+
 class QuantileSummary(TypedDict):
     """分层收益统计摘要。"""
 
