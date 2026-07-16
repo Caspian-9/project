@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Literal, Optional
+from typing import Any, Literal, Optional, TypedDict
 
 import numpy as np
 import pandas as pd
@@ -341,7 +341,7 @@ class FactorBacktestEngine:
         for t_idx in range(total_iters):
             if t_idx > 0 and t_idx % report_every == 0:
                 pct = t_idx * 100 // total_iters
-                print(f"    分层收益: {pct}% ({t_idx}/{total_iters})", end="\r", flush=True)
+                print(f"    分层收益: {pct}% ({t_idx}/{total_iters})", flush=True)
 
             t = factor.index[t_idx]
             t_next = returns.index[t_idx + self.holding_periods]
@@ -385,7 +385,7 @@ class FactorBacktestEngine:
         if not quantile_returns_list:
             raise ValueError("无法计算分层收益——数据不足")
 
-        print("    分层收益: 100%", " " * 10)
+        print("    分层收益: 100%", flush=True)
         quantile_returns = pd.DataFrame(quantile_returns_list).sort_index(axis=1)
 
         # 累计净值
@@ -466,7 +466,7 @@ class FactorBacktestEngine:
 
         for i in range(n_ic):
             if i > 0 and i % ic_report == 0:
-                print(f"    IC计算: {i*100//n_ic}% ({i}/{n_ic})", end="\r", flush=True)
+                print(f"    IC计算: {i*100//n_ic}% ({i}/{n_ic})", flush=True)
 
             t = factor.index[i]
             t_next = returns.index[i + 1]  # 用下期收益
@@ -488,7 +488,7 @@ class FactorBacktestEngine:
             ic_values.append(ic)
             ic_times.append(t_next)
 
-        print("    IC计算: 100%", " " * 10)
+        print("    IC计算: 100%", flush=True)
         return pd.Series(ic_values, index=pd.DatetimeIndex(ic_times), name="RankIC")
 
     @staticmethod
@@ -526,9 +526,6 @@ class FactorBacktestEngine:
         running_max = cumulative.cummax()
         drawdown = (cumulative - running_max) / running_max
         return float(drawdown.min())
-
-from dataclasses import dataclass, field
-from typing import TypedDict
 
 
 
