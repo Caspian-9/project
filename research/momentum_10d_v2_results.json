@@ -1,0 +1,38 @@
+{
+  "_config": {
+    "n_quantiles": 5,
+    "weighting": "equal",
+    "holding_periods": 1,
+    "standardize": "style",
+    "quantile_method": "style",
+    "transform": "rank",
+    "clean_outliers": true,
+    "clean_method": "mad",
+    "periods_per_year": 252
+  },
+  "_meta": {
+    "generated_at": "2026-07-16T05:20:19.969236",
+    "n_factors": 1,
+    "factor_source": "",
+    "notes": "LLM选择: 行业标准化+行业分位+Rank变换+等权+1日持仓。理由: A股短期反转+IC衰变快+收益率极端值多"
+  },
+  "factors": {
+    "momentum_10d": {
+      "ic_ir": -0.1711993301175896,
+      "ic_mean": -0.024976653200873358,
+      "sharpe": 0.4312513923548548,
+      "maxdd": -0.3739150984101586,
+      "monotonic": true,
+      "grade": "C",
+      "decision": "needs_work",
+      "spread_annual": 0.05931759513116225,
+      "q_detail": {
+        "0": 0.09999353734107996,
+        "1": 0.11502992188821405,
+        "2": 0.14596217681735713,
+        "3": 0.1504451990450589,
+        "4": 0.1593111324722422
+      }
+    }
+  }
+}

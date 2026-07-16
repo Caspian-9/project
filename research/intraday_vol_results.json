@@ -1,0 +1,39 @@
+{
+  "_config": {
+    "n_quantiles": 5,
+    "weighting": "equal",
+    "holding_periods": 1,
+    "standardize": "style",
+    "quantile_method": "style",
+    "transform": "rank",
+    "clean_outliers": true,
+    "clean_method": "mad",
+    "periods_per_year": 252
+  },
+  "_meta": {
+    "generated_at": "2026-07-16T05:57:40.643290",
+    "n_factors": 1,
+    "factor_source": "",
+    "notes": "日内振幅=(high-low)/close。参数: 行业标准化+行业分位+Rank变换(涨跌停日振幅极端值)。行业中性原因: 科技股天然高振幅"
+  },
+  "factors": {
+    "intraday_volatility": {
+      "ic_ir": -0.2555463190271963,
+      "ic_mean": -0.03347902673233046,
+      "sharpe": -0.67642735121587,
+      "maxdd": -0.8421857504581903,
+      "monotonic": false,
+      "grade": "C",
+      "decision": "needs_work",
+      "spread_annual": -0.1010019278359848,
+      "direction": "负向",
+      "q_detail": {
+        "0": 0.1977087622110241,
+        "1": 0.11360797693806891,
+        "2": 0.11467698219064269,
+        "3": 0.12919531884850394,
+        "4": 0.0967068343750393
+      }
+    }
+  }
+}
