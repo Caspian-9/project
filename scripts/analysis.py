@@ -310,11 +310,13 @@ def compute_full_dynamic_metrics(
     Returns:
         DynamicMetrics。
     """
+    print("  动态分析: IC衰变/自相关/信号持续/换手率...", end=" ", flush=True)
     ic_decay = compute_ic_decay(factor, returns)
     autocorr_decay = compute_autocorr_decay(factor)
     signal_persistence = compute_signal_persistence(factor, n_quantiles)
     signal_reversal = compute_signal_reversal(factor, n_quantiles)
     turnover = compute_turnover_metrics(factor, n_quantiles)
+    print("done")
 
     return DynamicMetrics(
         factor_name=factor_name,

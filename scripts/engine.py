@@ -264,14 +264,25 @@ class FactorBacktestEngine:
         factor_aligned = factor_values.loc[common_times, common_assets]
         returns_aligned = data.returns.loc[common_times, common_assets]
 
+        import time
+        t_start = time.time()
+        n_total = len(common_times)
+        print(f"  [{factor_name}] 回测中: {n_total}期 × {len(common_assets)}只 "
+              f"| Q={self.n_quantiles} 加权={self.weighting} 持仓={self.holding_periods}期 "
+              f"标准化={self.config.standardize} 分位={self.config.quantile_method}")
+
         # 计算分层收益
         asset_info = data.asset_info
         quantile_result = self._compute_quantile_returns(
             factor_aligned, returns_aligned, asset_info
         )
+        t1 = time.time()
+        print(f"  [{factor_name}] 分层收益完成 ({t1-t_start:.1f}s), {len(quantile_result.quantile_returns)}期有效")
 
         # 计算 IC 序列
         ic_series = self._compute_rank_ic(factor_aligned, returns_aligned)
+        t2 = time.time()
+        print(f"  [{factor_name}] IC计算完成 ({t2-t1:.1f}s), {len(ic_series)}期")
 
         # 多空表现
         spread = quantile_result.top_bottom_spread.dropna()
@@ -312,7 +323,9 @@ class FactorBacktestEngine:
             QuantileBacktestResult。
         """
         n_times = len(factor.index)
+        total_iters = n_times - self.holding_periods
         quantile_returns_list: list[pd.Series] = []
+        report_every = max(1, total_iters // 10)
 
         use_industry_q = (
             self.config.use_industry_quantile
@@ -325,7 +338,11 @@ class FactorBacktestEngine:
             and "market_cap" in asset_info.columns
         )
 
-        for t_idx in range(n_times - self.holding_periods):
+        for t_idx in range(total_iters):
+            if t_idx > 0 and t_idx % report_every == 0:
+                pct = t_idx * 100 // total_iters
+                print(f"    分层收益: {pct}% ({t_idx}/{total_iters})", end="\r", flush=True)
+
             t = factor.index[t_idx]
             t_next = returns.index[t_idx + self.holding_periods]
 
@@ -368,6 +385,7 @@ class FactorBacktestEngine:
         if not quantile_returns_list:
             raise ValueError("无法计算分层收益——数据不足")
 
+        print("    分层收益: 100%", " " * 10)
         quantile_returns = pd.DataFrame(quantile_returns_list).sort_index(axis=1)
 
         # 累计净值
@@ -443,7 +461,13 @@ class FactorBacktestEngine:
         ic_values: list[float] = []
         ic_times: list[pd.Timestamp] = []
 
-        for i in range(len(factor.index) - 1):
+        n_ic = len(factor.index) - 1
+        ic_report = max(1, n_ic // 10)
+
+        for i in range(n_ic):
+            if i > 0 and i % ic_report == 0:
+                print(f"    IC计算: {i*100//n_ic}% ({i}/{n_ic})", end="\r", flush=True)
+
             t = factor.index[i]
             t_next = returns.index[i + 1]  # 用下期收益
 
@@ -464,6 +488,7 @@ class FactorBacktestEngine:
             ic_values.append(ic)
             ic_times.append(t_next)
 
+        print("    IC计算: 100%", " " * 10)
         return pd.Series(ic_values, index=pd.DatetimeIndex(ic_times), name="RankIC")
 
     @staticmethod
@@ -570,6 +595,7 @@ def compute_quantile_summary_table(
           up_capture, down_capture, up_number, down_number, up_percent,
           down_percent, hit_ratio, worst_drawdown
     """
+    print(f"  计算概述表 (22指标×{result.quantile.n_quantiles}分位)...", end=" ", flush=True)
     q_rets = result.quantile.quantile_returns
     q_cum = result.quantile.quantile_cumulative
     summary: dict[str, dict[int, float]] = {}
@@ -676,6 +702,7 @@ def compute_quantile_summary_table(
         ]:
             summary.setdefault(metric, {})[q] = val
 
+    print("done")
     return summary
 
 
